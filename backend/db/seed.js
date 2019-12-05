@@ -462,6 +462,136 @@
     level: ['Advanced'],
     typeOfWave: ['point Break', 'Beach Break'],
     user: ''
-}
+},
+
+{
+  spotName: 'Mimizan',
+  lat: '44.2004° N',
+  long: '1.2280° W',
+  country: 'France',
+  region: 'Landes',
+  image: 'https://www.ultimatefrance.com/wp-content/uploads/2017/01/surf-surfing-spot-waves-mimizan.jpg',
+  description: 'Quiet place but with good enough waves to produce bodyboard champ Nicolas Capdeville. Four beaches on either side of the rivermouth that helps sculpt some good sandbars, particularly from mid to high tide.',
+  level: 'beginner',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Lacanau',
+  lat: '45.0005° N',
+  long: '1.2024° W',
+  country: 'France',
+  region: ' Gironde',
+  image: 'https://www.ultimatefrance.com/wp-content/uploads/2017/01/surf-lacanau-line-up.jpg',
+  description: 'ASP contest venue since 1979, this is surf central for the Bordeaux area. The reason? Consistent surf, easily checked from the boardwalk at Plage Centrale before opting for a session at La Nord, La Sud or Super Sud among 14km of beaches ideal with a medium size W-NW swell. Handles more size thanks to the deep scalloped baines around the rock jetties that are there to hold the sand in place. Every bit as good as Landes, especially in summer when it is often bigger in the W windswells. Fast peeling low tide runners or mid to high tide shories tapering into the rips are sometimes separated by a deep trench, or spin all the way through. Like all Biscay beachies, it's fine for beginners when small and friendly, but a real challenge when overhead and bombing, not least because of the wicked rips.',
+  level: 'intermediate',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Côte Sauvage',
+  lat: '45.7420° N',
+  long: '1.2373° W',
+  country: 'France',
+  region: 'Poitou-Charente',
+  image: 'http://baguetteshandlebarsdiscoverfrance.com/wp-content/uploads/2018/06/061418_1926_Top10things2.jpg',
+  description: 'A concentration of some of the best spots in Brittany, with some hollow and powerful waves on a 2km stretch. Top-to-bottom, hard breathing barrels when a WSW swell meets an E wind. Port-Blanc is the first bay, gets some N wind shelter from a cliff and will probably be the busiest spot. Port Marie breaks far offshore and Port-Rhu is a well-defined, localised peak, while Port-Bara is more accessible. Some reef anchors the sandbars and large clusters of rock affect the line-up at high tides, so exit before dead high.',
+  level: 'intermediate',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Plage de Port Blanc',
+  lat: '48.50° N',
+  long: '3.18° W',
+  country: 'France',
+  region: 'Britanny South',
+  image: '',
+  description: '',
+  level: 'advanced',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Côte des Basques',
+  lat: '43.4785° N',
+  long: '1.5670° W',
+  country: 'France',
+  region: 'Basque Country',
+  image: 'https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium-5/plage-de-la-cote-des-basques-biarritz-john-harper.jpg',
+  description: `The birthplace of France's surfing scene remains popular with longboarders enjoying mellow walls sheltered from northern winds. There's usually a peak close to the headland and another defined peak a bit further down the beach. While it is friendly and fun-loving for mals and beginners at knee to shoulder-high, there is a bit more energy at headhigh plus, especially if you drift south. The offshore islands filter and organise the swell a bit, but it is mainly a summer spot that is still rideable in the afternoon onshores.`,
+  level: 'intermediate',
+  typeOfWave: 'point break',
+  user: ''
+  },
+  
+  {
+  spotName: `Plage d'Hendaye`,
+  lat: '43.3742° N',
+  long: ' 1.7801° W',
+  country: 'France',
+  region: 'Basque Country',
+  image: 'https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/sites/regions_france3/files/styles/top_big/public/assets/images/2016/03/10/plage_hendaye.jpg?itok=S3KpMF4V',
+  description: 'This is the answer when everything else is closing-out. A long stretch of average beachbreaks offers a wide choice of peaks; usually better close to the casino or the south jetty. The place is perfect for beginners, which explains the amazing number of surf schools. The two rocks of Les Deux Jumeaux to the northeast occasionally hold a solid right that requires patience. Further out off the eastern headland is Vanthrax, an imaginatively named death peak that spews out massive left barrels a handful of times a year. Crazy bodyboarders and pros only.',
+  level: 'intermediate',
+  typeOfWave: 'point break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Les Culs Nus',
+  lat: '43.6800° N',
+  long: '1.4385° W',
+  country: 'France',
+  region: 'Landes',
+  image: 'https://farm2.staticflickr.com/1519/24684452059_ef6ff276a0_b.jpg',
+  description: 'The link between the normal beachbreaks to the north and the heavy shories of La Graviere. Usually better at mid to high tides with a moderate swell, because of the steeper beach angle. Powerful action close to shore.',
+  level: 'beginner',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Les Estagnots',
+  lat: '43.6848° N',
+  long: '1.4378° W',
+  country: 'France',
+  region: 'Landes',
+  image: 'https://spot-thumbnails.cdn-surfline.com/spots/584204204e65fad6a7708fec/584204204e65fad6a7708fec_1500.jpg',
+  description: 'Top quality peaks when a good W-NW swell hits the sand. Handles a bit more size than Bourdaines and Penon, but expect severe long-shore drift when bigger. High tide inside banks can be hollow and fast.',
+  level: 'intermediate',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+  
+  {
+  spotName: 'Hossegor (La Nord)',
+  lat: '43.6674° N',
+  long: '1.4417° W',
+  country: 'France',
+  region: 'Landes',
+  image: 'https://media-cdn.tripadvisor.com/media/vr-splice-j/07/78/b3/b8.jpg',
+  description: 'Usually the only rideable beachbreak north of Capbreton when the swell heads towards 3m on the Biscay buoy. The shifting, outside bank holds triple overhead plus and favours rights into the rip torn paddling channel. Steep drops and fast walls with barrel sections mean extra inches are a good idea. Can work at all tides but mid is the best bet. Going left often leads to a punishing paddle back out as the deeper, defined paddling channel is usually south of the waves towards Centrale.',
+  level: 'beginner',
+  typeOfWave: 'beach break',
+  user: ''
+  },
+
+  {
+  spotName: 'Hossegor (La Graviere)',
+  lat: '43.6738° N',
+  long: '1.4409° W',
+  country: 'France',
+  region: 'Landes',
+  image: 'https://i.pinimg.com/originals/a2/db/16/a2db16de5f2509377b73773512da2a39.jpg',
+  description: 'Sited on an old gravel pit, this is the legendary Hossegor tube spot. Dredging the rivermouth has affected wave quality in the past, but it is back with a vengeance, hosting pro-surfing competitions in huge conditions, including the 2011 Quik Pro. Sometimes white-caps outside, rolls in and reforms, standing up over the shallow inside bars. Heavy, thick-lipped beasts, break perilously close to shore and often close-out, snapping more boards than just about anywhere. Tidal range radically affects the window for ideal conditions, as does swell period, which decides if it is messy and inconsistent or lined-up and bombing through. The rip speed usually rises in direct proportion with the swell height and on big days, only the tow crew will be able to get into the sets before being swept south in the current.',
+  level: 'intermediate',
+  typeOfWave: 'beach break',
+  user: ''
+  }
   
 ]
