@@ -211,6 +211,257 @@
     level: ['Beginners'], 
     typeOfWave: 'Beach Break',
     user: ''
-  }
+  },
+  {
+    spotName: 'Arrifina Costa Vicentina',
+    Lat: '37.2941° N',
+    Long: '8.8639° W',
+    country: 'Portugal',
+    region: 'Aljezur',
+    image: 'https://algarvevillasblog.files.wordpress.com/2017/07/020-stranden-costa-vicentina-05-arrifana.jpg',
+    description: `Beneath the white-washed village and massive cliffs is a busy and very ordinary BeachBreak that works throughout the tide, picks up most swell and has wind shelter. The real reason to visit Arrifana is the world-class, right pointBreak at the Beaches northern end. Waves here are long, fast and very heavy with shAllow boils and barrel sections. It needs to be at least 2m (6ft) to start Breaking and holds up to triple overhead.
+    Be careful of the two large rocks on the inside, urchins, rips and locals. Not a Beginner’s wave. Easy parking, showers, lifeguard (for the surf schools), a surfshop (in Aljezur) and camping nearby.`,
+    level: ['Intermediate'],
+    typeOfWave: 'point Break',
+    user: ''
+},
+{
+    spotName: 'Praia Do Amado Costa Vicentina',
+    Lat: '37.1673° N',
+    Long: '8.9023° W',
+    country: 'Portugal',
+    region: 'Algarve',
+    image: 'https://secureservercdn.net/166.62.112.199/rbe.285.myftpupload.com/wp-content/uploads/2019/04/2016-12-08-algarve-surf-Beaches-amado-Beach-jpg.jpg',
+    description: `Praia do Amado offers a lot of variety on many different wave conditions. It has great right and left running waves so offers waves for both goofy and regular footed surfers.
+    Tides do not effect waves and it can be surfed generAlly All year round, being one of the most consistent in the Algarve as it is open to All Atlantic swells, while still being sheltered by the north west winds.
+    Amado Beach is in a protected area where no development is Allowed so the Surf Schools and Accommodation are located in towns such as Lagos and they travel to Amado Beach each day to surf.
+    Beach Break – lefts/rights – some low rocks`,
+    level: ['Beginner'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Praia de Carcavelos Carcavelos',
+    Lat: '38.6796° N',
+    Long: '9.3360° W',
+    country: 'Portugal',
+    region: 'Lisbon',
+    image: 'https://www.surfholidays.com/assets/images/blog/2016-12-20-Carcavelos_surf_Beach_surfholidays_3.jpg',
+    description: `The original and still one of the best Portuguese surf spots, Carcavelos is a awesome BeachBreak. Beside the fort at the eastern end, cylindrical lefts roll over shifting sandbars, attracting seemingly every surfer in the city and most of the foreign surfers on the Costa Estoril. Best on a SW swell, when power intensifies and the occasional right appears.
+    Highly consistent, always crowded, rips, some localism, pay to park and there are All facilities.`,
+    level: ['Beginner'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Ericeira',
+    Lat: '38.9668° N',
+    Long: '9.4062° W',
+    country: 'Portugal',
+    region: 'Mafra',
+    image: 'https://ola-onda-ericeira.com/wp-content/uploads/2017/04/Ribeira-DIlhas-Ericeira-Surf-Spot-Guide-Portugal-1024x722.jpg',
+    description: `Ericeira is the Mecca of Portuguese surf and like Peniche, it offers a truly staggering variety of waves, crammed into just a few kilometres of coast. There's something to suit every standard but unlike Peniche, most of these waves are rock bottomed and there is little wind or swell shelter. Coxos is the best known wave, a long, hollow world class right, but sitting proudly next to it in the quality stakes are the barrels of Pedra Branca and Reef. Such high class waves attract crowds and with Lisbon only a short drive away there are no shortages of surfers wanting a piece of Ericeira action. This lively and attractive town is a year round surf destination with the Beach Breaks to the south of town being the best bet in the smAll summer season and the Reefs and points the main event for the remainder of the year.`,
+    level: ['All levels'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Praia do Norte Nazaré',
+    Lat: '39.6120° N',
+    Long: '9.0854° W',
+    country: 'Portugal',
+    region: 'Oeste',
+    image: 'https://www.surfertoday.com/images/stories/praiadonortewave.jpg',
+    description: `People are only just beginning to wake up to the potential of Nazaré. A finger of deep water points directly at the Beach to the north of town and the result is similar to La Nord in Hossegor. Huge, heavy and hollow Beach peaks for the brave.
+    Be warned - currents can be strong, and giant clean up sets are guaranteed when it’s on, which isn’t that often as it’s wind exposed. The main town Beach offers a sheltered little wedge on big swells.`,
+    level: ['Advanced'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Peniche',
+    Lat: '39.3603° N',
+    Long: '9.3876° W',
+    country: 'Portugal',
+    region: 'Oeste',
+    image: 'https://cdn.thecrazytourist.com/wp-content/uploads/2017/07/Surfing-1-1024x683.jpg',
+    description: `The little fishing town of Peniche is not the prettiest spot on the Portuguese coast, but it's probably the most renowned surfing area in the country. OriginAlly an island, Peniche became one with the mainland due to the silting up of the shAllow channel that divided it from the rest of the country. Today that short and narrow spit of land contains an obscene amount of wave variety that can provide the goods in almost any conditions. Most famous is Supertubos, regarded by many as one of Europe's best Beach Breaks, but there are plenty of other barrels to pull into around Peniche.
+    Peniche is a year round destination with swell exposure on the north side of the town and shelter on the south. The town also sits at the dividing point between the cooler and wetter north and the dry, sunny south meaning that summers are long but tempered by cool sea breezes and the winters mild though occasionAlly stormy.`,
+    level: ['All levels'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Praia do cabedelo Figueira da Foz',
+    Lat: '40.1400° N',
+    Long: '8.8627° W',
+    country: 'Portugal',
+    region: 'Coimbra',
+    image: 'https://www.surftotal.com/en/media/k2/gAlleries/550/01.png',
+    description: `Cabedelo in North Portugal is an exposed Beach/pier Break that has pretty consitent surf and can work at any time of the year. Offshore winds blow from the east. Tends to receive a mix of groundswells and windswells and the optimum swell angle is from the west.. When the surf is up, it can get quite busy in the water. Watch out for dangerous rips.`,
+    level: ['Intermediate'],
+    typeOfWave: ['Jetty Break'],
+    user: ''
+},
+{
+    spotName: 'Espinho',
+    Lat: '41.0072° N',
+    Long: '8.6410° W',
+    country: 'Portugal',
+    region: 'Aveiro',
+    image: 'http://www.wavelengthmag.com/wp-content/uploads/2016/12/Screen-Shot-2016-12-08-at-15.25.52.png',
+    description: `The best known surf spot in north Portugal Breaks off a jetty and runs through to the inside as a fast, wAlled up right that finAlly dies as a close out over shAllow rocks. Plenty of tubing moments with swells of up to 3m+ (10ft).
+    The busiest spot in the area with the localism attitudes that you would expect. Very polluted.`,
+    level: ['Intermediate'],
+    typeOfWave: ['Jetty Break'],
+    user: ''
+},
+{
+    spotName: 'Sagres',
+    Lat: '37.0168° N',
+    Long: '8.9406° W',
+    country: 'Portugal',
+    region: '',
+    image: 'https://coresites-cdn.factorymedia.com/surfeurope_new/wp-content/uploads/2016/01/algarve-surf.jpg',
+    description: `The most consistent of the Sagres Beaches is generAlly pretty average. Lower tidal stages on the push are better as is a W swell. It doesn’t pick up as much swell as the west coast so it is a popular place for Beginner/Intermediates and the many local bodyboarders.
+    Highly consistent, often crowded, currents and localism, but the water is clean, and amenities include showers, lifeguard, bodyboard surf school, surfshop and camping in town.`,
+    level: ['All levels'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Paúl do Mar Madeira',
+    Lat: '32.7591° N',
+    Long: '17.2304° W',
+    country: 'Portugal',
+    region: 'Vila do Bispo',
+    image: 'https://www.surfertoday.com/images/stories/jardimdomar.jpg',
+    description: `Once named the best big-wave pointBreak in the world by Surfer Magazine, Ponta Jardim now suffers severe backwash at mid to high tide from a new seawAll built in 2003. The Break still has its days when the critical drops lead into long, fast, powerful wAlls, but they are much less frequent and only last for a few hours around dead low tide. Experts with pintails only.
+    Getting in and out of the water on a big day can be downright frightening and the new seawAll has made the waves Break even closer to shore, so beware. Best shot is to paddle out from the backside of the point, to the west of the village.
+    Follow main highway on south shore , past Ribeira Brava and Calheta, and look for signs for Jardim do Mar.`,
+    level: ['Advanced'],
+    typeOfWave: ['Reef Break'],
+    user: ''
+},
+{
+    spotName: 'Elands Bay',
+    Lat: '32.3135° S',
+    Long: '18.3505° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/8szKWZscFbWzeBdoNa1Ci47Qnps=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-90798727-5c0831cd46e0fb0001125ba2.jpg',
+    description: `Located 135 miles/220 kilometres north of Cape Town on South Africa's West Coast, Elands is a top choice for surfers looking to avoid the crowds. There are a handful of guesthouses and self-catering rentals, but otherwise, it's pretty frontier. The wave here works best in summer when a southeaster holds up a westerly swell to produce a cranking left point Break. Don't forget your wetsuit and hoodie - the water here is freezing. `,
+    level: ['Intermediate'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Long Beach',
+    Lat: '34.1101° S',
+    Long: '18.2530° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/ZErInaYtTcdF84RJNSo7GzMzYx4=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-618679962-5c08322646e0fb0001d07735.jpg',
+    description: `An hour's drive south of Cape Town brings you to Long Beach in the tiny town of Kommetjie. Situated on the Atlantic side of the southern Cape Peninsula, the Beach offers the best and most consistent shore Break in the Cape (maybe second in the country after Durban). It works best on a southeaster in smAll to medium swell. If you're after a bigger ride, the Outer Kom kicks up massive curlers on a big westerly swell that are not for the faint-hearted.`,
+    level: ['Intermediate'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Muizenberg',
+    Lat: '34.136002° S',
+    Long: '18.430000° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/vU6-rsMGinnKzJ3d49Ipko-N7wA=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/_-54WEB-5c784bc0c9e77c0001d19cca.jpg',
+    description: `Nestled on the edge of False Bay, Muizenberg is home to an extremely popular swimming Beach cAlled Surfer's Corner. It's also known as a long boarders' paradise, and has a selection of surf schools renting out boards and wetsuits. In summer, it's best to get there early before the crowds and the pumping southeaster ruin things. This spot works best on a north-westerly in winter, but can be surfed most days of the year with a long board.`,
+    level: ['All levels'],
+    typeOfWave: ['Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Still Bay',
+    Lat: '33.9630° S',
+    Long: '22.4617° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/se3n2DckfJ5KCu9gOG18POpGNXM=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-753293567-5be2a47646e0fb00265a3833.jpg',
+    description: `Heading east from Cape Town, Stilbaai is one of several excellent surf spots along the Garden Route, with other constant producers including Mossel Bay, Plettenburg Bay, and Wilderness. Stilbaai has a pretty constant shore Break in front of the village, but those in the know wait for a big south to southeast swell, when the right-hand point Break reAlly grinds. If you're lucky, you'll be joined on backline by the bay's semi-resident dolphins.`,
+    level: ['Beginner'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Victoria Bay',
+    Lat: '34.0027° S',
+    Long: '22.5510° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/6TOAqbUYEWF64BwYCidMBDcyQec=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/DSC_3661-5be2a4f2c9e77c0051048fd6.jpg',
+    description: `A very narrow, steep-sided bay on the outskirts of George, Victoria Bay is jealously guarded by young locals when it's working well. Due to the shape of the bay, this spot operates most of the year and is suitable for surfers of All experience levels. If you're planning on hanging around for a while, try to get a booking at Lands End guesthouse, which touts itself as "the closest accommodation to the sea in Africa", making it ideal for surfers. `,
+    level: ['All levels'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Cape St Francis',
+    Lat: '34.1677° S',
+    Long: '24.8315° E',
+    country: 'South Africa',
+    region: 'Eastern Cape',
+    image: 'https://www.tripsavvy.com/thmb/iSNAtbq_a2ldtmrchbNfWnGIbDc=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-83204263-5c083316c9e77c000189eb31.jpg',
+    description: `This spot is not to be confused with next-door St. Francis Bay, which was made famous by the '60s surf classic Endless Summer. The latter is unbeatable when the reticent wave known as Bruce's Beauties is pumping down the arm of the bay, creating barrels that literAlly roll for kilometers. At any other time, the Cape is a much better destination with a variety of point and shore Breaks, the best of which is Seal Point near the lighthouse.`,
+    level: ['Intermediate'],
+    typeOfWave: ['Beach Break', 'Reef Break'],
+    user: ''
+},
+{
+    spotName: 'Jeffreys Bay',
+    Lat: '34.0333° S',
+    Long: '24.9166° E',
+    country: 'South Africa',
+    region: 'Eastern Cape',
+    image: 'https://www.tripsavvy.com/thmb/lSaHCR8u_Ds8OWn1VaWoQ6Y1RtQ=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-534624577-5c08337546e0fb0001206e41.jpg',
+    description: `Supertubes, need we say more? Home of the World Surf League's annual J-Bay Open, this is South Africa's premier surf spot and one of the world's most consistent tubes. It's beloved by local giants like Jordy Smith, and has welcomed a slew of top overseas surfers (think Kelly Slater and Mick Fanning). However, Jeffreys is also one of the few places in the country where you could end up on the sharp end of local surf xenophobia. `,
+    level: ['All levels'],
+    typeOfWave: ['All Types'],
+    user: ''
+},
+{
+    spotName: 'Green Point',
+    Lat: '33.9000° S',
+    Long: '18.4000° E',
+    country: 'South Africa',
+    region: 'KwaZulu-Natal',
+    image: 'https://www.tripsavvy.com/thmb/vui4X3ke0o1XnJa57Ui8C6nigIE=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-93103552-5be2a68fc9e77c0051a5b34a.jpg',
+    description: `Located just north of Scottburgh on KwaZulu-Natal's South Coast, Green Point is one of the province's best-known surf spots. It needs a medium, southerly swell to get it going, but when it does, it's a classic right-hand point-Break that rivals several of its more famous counterparts down south. It can get busy on weekends, but for most of the year, it's a relatively off-the-beaten track option for those that don't like to compete too much for space. `,
+    level: ['Beginner'],
+    typeOfWave: ['point Break', 'Beach Break'],
+    user: ''
+},
+{
+    spotName: 'Durban',
+    Lat: '29.8302° S',
+    Long: '31.0368° E',
+    country: 'South Africa',
+    region: 'KwaZulu-Natal',
+    image: 'https://www.tripsavvy.com/thmb/qkfZIkcuVHfZTOBOdolWjOFRMWE=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-509251609-5c08346746e0fb000178e54c.jpg',
+    description: `Sometimes referred to as the Bay of Plenty, Durban is a mecca for South African surfers. There is seldom a day when the wave is not working, and you can choose your spot according to the size of the swell. It gets bigger the further north you go, starting with Beginner-friendly waves in front of uShaka Marine World and progressing to the pro-worthy left and right-hand Breaks at New Pier. Keep an eye out for territorial locals at New Pier, Dairy and North Beach. `,
+    level: ['Intermediate'],
+    typeOfWave: ['point Break', 'river mouth'],
+    user: ''
+},
+{
+    spotName: 'Dungeons',
+    Lat: '33.9415° S',
+    Long: '18.3735° E',
+    country: 'South Africa',
+    region: 'Western Cape',
+    image: 'https://www.tripsavvy.com/thmb/mxNuVs36k7fPso7dM0ZfT4oVQv4=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-789382-5c08350f46e0fb0001d13883.jpg',
+    description: `Classed as one of the world's “big wave” venues. The 15- to 30-foot swell at Dungeons Breaks over a shAllow Reef on the sea side of Hout Bay and is accessible only by watercraft. For the brave (and seriously experienced) only, the adrenaline rush is made even more intense by the fact that this area is one of the sharkiest surf spots in South Africa. `,
+    level: ['Advanced'],
+    typeOfWave: ['point Break', 'Beach Break'],
+    user: ''
+}
   
 ]
