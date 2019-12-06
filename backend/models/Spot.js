@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
@@ -5,6 +6,11 @@ const commentSchema = new mongoose.Schema({
   text: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   likes: { type: Number } //============ADDED
+})
+
+const ratingSchema = new mongoose.Schema({
+  rate: { type: Number, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 })
 
 const spotSchema = new mongoose.Schema({
@@ -18,25 +24,12 @@ const spotSchema = new mongoose.Schema({
   level: { type: String, required: true },
   typeOfWave: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  comments: [commentSchema]
+  comments: [commentSchema],
+  rating: [ratingSchema]
 }, {
   timestamps: true
 })
 
-// const animalSchema = new mongoose.Schema({
-//   name: { type: String, required: true, unique: true },
-//   species: { type: String, required: true },
-//   isCarnivore: { type: Boolean, required: true },
-//   image: { type: String, required: true },
-//   dangerRating: { type: Number, required: true, min: 1, max: 5 },
-//   habitats: { type: [String] },
-//   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-//   comments: [ commentSchema ]
-// }, {
-//   timestamps: true
-// })
-
 spotSchema.plugin(uniqueValidator)
 
 module.exports = mongoose.model('Spot', spotSchema)
-// module.exports = mongoose.model('Animal', animalSchema)  // OLD

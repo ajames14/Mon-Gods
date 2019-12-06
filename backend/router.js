@@ -5,9 +5,13 @@ const spots = require('./controllers/spots')
 const users = require('./controllers/users')
 
 // const address = require('./controllers/latlong')
+const latlong = require('./controllers/latlong')
 
 // Secure route is our custom middleware
 const secureRoute = require('./lib/secureRoute')
+
+router.route('/address')
+  .post(latlong.address)
 
 router.route('/spots')
   .get(spots.index)
@@ -17,6 +21,9 @@ router.route('/spots/:id')
   .get(spots.show)
   .put(secureRoute, spots.update)
   .delete(secureRoute, spots.remove)
+
+router.route('/spots/:id/rate')
+  .post(secureRoute, spots.addRating)
 
 router.route('/spots/:id/comments')
   .post(secureRoute, spots.createComment)

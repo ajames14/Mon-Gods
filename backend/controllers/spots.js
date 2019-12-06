@@ -1,7 +1,4 @@
-// Controllers contain all our 'handler logic' for our routes. So their
-// job is essentially to use our models to perform CRUD operations
-// (create, read, update, delete), and then send an appropriate response
-// back to the client
+
 
 const Spot = require('../models/Spot')
 
@@ -82,6 +79,20 @@ function createComment(req, res) {
     .then(spot => res.status(201).json(spot))
     .catch(err => res.status(404).json({ message: 'Not Found' }))
 }
+function addRating(req, res) {
+  req.body.user = req.currentUser
+  Spot
+    .findById(req.params.id)
+    .populate('rating.user') //check
+    .then(spot => {
+      if (!spot) return res.status(404).json({ message: 'Not Found' })
+      if (req.body.rate < 1 || req.body.rate > 5) return res.status(404).json({ message: 'Invalid rating' })
+      spot.rating.push(req.body)
+      return spot.save()
+    })
+    .then(spot => res.status(201).json(spot))
+    .catch(err => res.status(404).json({ message: 'Not Found' }))
+}
 
 function deleteComment(req, res) {
   Spot
@@ -104,5 +115,6 @@ module.exports = {
   update,
   remove,
   createComment,
-  deleteComment
+  deleteComment,
+  addRating
 }
