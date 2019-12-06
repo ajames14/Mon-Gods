@@ -4,10 +4,13 @@ const router = require('express').Router()
 const spots = require('./controllers/spots')
 const users = require('./controllers/users')
 
-const address = require('./controllers/latlong')
+const latlong = require('./controllers/latlong')
 
 // Secure route is our custom middleware
 const secureRoute = require('./lib/secureRoute')
+
+router.route('/address')
+  .post(latlong.address)
 
 router.route('/spots')
   .get(spots.index)

@@ -28,8 +28,8 @@ mongoose.connect(
         return Spot.create([
           {
             spotName: 'Anchor Point',
-            lat: '',
-            long: '',
+            lat: '59.776667',
+            long: '-151.831389',
             country: 'Morocco',
             region: 'Taghazout',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/anchor_point_surf_berbere_taghazout_holiday_surf_camp_morocco.png',
@@ -40,8 +40,8 @@ mongoose.connect(
           },
           {
             spotName: 'Devils Rock',
-            lat: '',
-            long: '',
+            lat: '47.4192',
+            long: '-79.6036',
             country: 'Morocco',
             region: 'Taghazout',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/devils_rock_surf_school_morocco.jpg',
@@ -52,8 +52,8 @@ mongoose.connect(
           },
           {
             spotName: 'Boilers',
-            lat: '',
-            long: '',
+            lat: '30.625198',
+            long: '-9.880212',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/anchor_point_surf_berbere_taghazout_holiday_surf_camp_morocco.png',
@@ -64,8 +64,8 @@ mongoose.connect(
           },
           {
             spotName: 'Imsouane',
-            lat: '',
-            long: '',
+            lat: '30.841314',
+            long: '-9.821670',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://www.surfholidays.com/accommodation/morocco/imsouane/travel-surf-morocco',
@@ -76,8 +76,8 @@ mongoose.connect(
           },
           {
             spotName: 'Killer Point',
-            lat: '',
-            long: '',
+            lat: '30.824707',
+            long: '-9.804611',
             country: 'Morocco',
             region: 'Taghazout',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/Killer-Point.jpg',
@@ -88,8 +88,8 @@ mongoose.connect(
           },
           {
             spotName: 'Safi',
-            lat: '',
-            long: '',
+            lat: '32.403013',
+            long: '-9.258322',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://theperfectwave.itravelsoftware.com/fotografije_itravel/816/3137_635534102310855326_800_533.jpg',
@@ -100,8 +100,8 @@ mongoose.connect(
           },
           {
             spotName: 'Tamri',
-            lat: '',
-            long: '',
+            lat: '30.709991',
+            long: '-9.859285',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/tamri_morocco_surf_spot.png',
@@ -112,8 +112,8 @@ mongoose.connect(
           },
           {
             spotName: 'Banana Point',
-            lat: '',
-            long: '',
+            lat: '30.496586',
+            long: '-9.677644',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/tamri_morocco_surf_spot.png',
@@ -125,8 +125,8 @@ mongoose.connect(
 
           {
             spotName: 'Tapia de Casariego',
-            Lat: '43.5702° N',
-            Long: '6.9439° W',
+            Lat: '43.572295',
+            Long: '-6.948244',
             country: 'Spain',
             region: 'Asturias',
             image: 'https://lasplayas.net/wp-content/uploads/2018/05/playa-penarronda.jpg',
@@ -138,8 +138,8 @@ mongoose.connect(
           },
           {
             spotName: 'San Lorenzo',
-            lat: '28.0913° N',
-            long: '16.6574° W',
+            lat: '43.541542',
+            long: '-5.649478',
             country: 'Spain',
             region: 'Asturias',
             image: 'https://gibspain.com/wp-content/uploads/2018/02/Playa-de-San-Lorenzo-Gij%C3%B3n-Asturias-Spain.jpg',
@@ -151,8 +151,8 @@ mongoose.connect(
           },
           {
             spotName: 'Playa De Berria',
-            lat: '43.4645° N',
-            long: '3.4656° W',
+            lat: '43.465105',
+            long: '-3.465991',
             country: 'Spain',
             region: 'Cantabria',
             image: 'https://turismodecantabria.com/imagenes/Playas/CDBE773B-42AD-53EA-E6A6-4BA521F5638B.jpg/resizeMod/0/1200/imagen.jpg',
@@ -165,8 +165,8 @@ mongoose.connect(
           },
           {
             spotName: 'Playa De Cuberris',
-            lat: '43.4962° N',
-            long: '3.6151° W',
+            lat: '43.498934',
+            long: '-3.613339',
             country: 'Spain',
             region: 'Cantabria',
             image: 'https://live.staticflickr.com/4084/4963802369_cddf286de1_b.jpg',
@@ -177,8 +177,8 @@ mongoose.connect(
           },
           {
             spotName: 'Pantin',
-            lat: '43.6373° N',
-            long: '8.1200° W',
+            lat: '43.640755',
+            long: '-8.112578',
             country: 'Spain',
             region: 'Galicia',
             image: 'http://www.pantinsurfcamp.com/imagenes/img2Localizacion.jpg',
@@ -190,8 +190,8 @@ mongoose.connect(
           },
           {
             spotName: 'Patos',
-            lat: '43.6373° N',
-            long: '8.1200° W',
+            lat: '42.155570',
+            long: '-8.824800',
             country: 'Spain',
             region: 'Galicia',
             image: 'http://www.turismo.gal/imaxes/mdaw/mduw/~edisp/~extract/TURGA050534~1~staticrendition/tg_carrusel_cabecera_grande.jpg',
@@ -203,8 +203,8 @@ mongoose.connect(
           },
           {
             spotName: 'Torrevieja La Mata',
-            lat: '38.0186° N',
-            long: '0.6530° W',
+            lat: '37.991057',
+            long: '-0.655415',
             country: 'Spain',
             region: 'Mediterranean',
             image: 'https://media-cdn.tripadvisor.com/media/photo-s/03/ac/8b/ed/la-mata-beach.jpg',
@@ -215,8 +215,8 @@ mongoose.connect(
           },
           {
             spotName: 'Playa de Mundaka',
-            lat: '43.4047° N',
-            long: '2.6993° W',
+            lat: '43.407919',
+            long: '-2.696823',
             country: 'Spain',
             region: 'Pais Vasco',
             image: 'https://shipitwise.com/wp-content/uploads/2016/09/Mundaka-Spain.jpg',
@@ -228,8 +228,8 @@ mongoose.connect(
           },
           {
             spotName: 'Sopelana',
-            lat: '43.4047° N',
-            long: '2.6993° W',
+            lat: '43.388068',
+            long: '-2.997692',
             country: 'Spain',
             region: 'Pais Vasco',
             image: 'https://photos.eltiempo.es/29/61/bac823c6adda67f8b2882b9d580d65e1_720x560.jpg',
@@ -241,8 +241,8 @@ mongoose.connect(
           },
           {
             spotName: 'Arrifina Costa Vicentina',
-            Lat: '37.2941° N',
-            Long: '8.8639° W',
+            Lat: '37.292397',
+            Long: '-8.864750',
             country: 'Portugal',
             region: 'Aljezur',
             image: 'https://algarvevillasblog.files.wordpress.com/2017/07/020-stranden-costa-vicentina-05-arrifana.jpg',
@@ -254,8 +254,8 @@ mongoose.connect(
           },
           {
             spotName: 'Praia Do Amado Costa Vicentina',
-            Lat: '37.1673° N',
-            Long: '8.9023° W',
+            Lat: '37.167337',
+            Long: '-8.902932',
             country: 'Portugal',
             region: 'Algarve',
             image: 'https://secureservercdn.net/166.62.112.199/rbe.285.myftpupload.com/wp-content/uploads/2019/04/2016-12-08-algarve-surf-Beaches-amado-Beach-jpg.jpg',
@@ -269,8 +269,8 @@ mongoose.connect(
           },
           {
             spotName: 'Praia de Carcavelos Carcavelos',
-            Lat: '38.6796° N',
-            Long: '9.3360° W',
+            Lat: '38.679360',
+            Long: ' -9.336269',
             country: 'Portugal',
             region: 'Lisbon',
             image: 'https://www.surfholidays.com/assets/images/blog/2016-12-20-Carcavelos_surf_Beach_surfholidays_3.jpg',
@@ -282,8 +282,8 @@ mongoose.connect(
           },
           {
             spotName: 'Ericeira',
-            Lat: '38.9668° N',
-            Long: '9.4062° W',
+            Lat: '38.963431',
+            Long: '-9.419057',
             country: 'Portugal',
             region: 'Mafra',
             image: 'https://ola-onda-ericeira.com/wp-content/uploads/2017/04/Ribeira-DIlhas-Ericeira-Surf-Spot-Guide-Portugal-1024x722.jpg',
@@ -294,8 +294,8 @@ mongoose.connect(
           },
           {
             spotName: 'Praia do Norte Nazaré',
-            Lat: '39.6120° N',
-            Long: '9.0854° W',
+            Lat: '39.609966',
+            Long: '-9.085828',
             country: 'Portugal',
             region: 'Oeste',
             image: 'https://www.surfertoday.com/images/stories/praiadonortewave.jpg',
@@ -307,8 +307,8 @@ mongoose.connect(
           },
           {
             spotName: 'Peniche',
-            Lat: '39.3603° N',
-            Long: '9.3876° W',
+            Lat: '39.600816',
+            Long: '-9.074740',
             country: 'Portugal',
             region: 'Oeste',
             image: 'https://cdn.thecrazytourist.com/wp-content/uploads/2017/07/Surfing-1-1024x683.jpg',
@@ -320,8 +320,8 @@ mongoose.connect(
           },
           {
             spotName: 'Praia do cabedelo Figueira da Foz',
-            Lat: '40.1400° N',
-            Long: '8.8627° W',
+            Lat: '40.149432',
+            Long: '-8.872584',
             country: 'Portugal',
             region: 'Coimbra',
             image: 'https://www.surftotal.com/en/media/k2/gAlleries/550/01.png',
@@ -332,8 +332,8 @@ mongoose.connect(
           },
           {
             spotName: 'Espinho',
-            Lat: '41.0072° N',
-            Long: '8.6410° W',
+            Lat: '41.010573',
+            Long: ' -8.646970',
             country: 'Portugal',
             region: 'Aveiro',
             image: 'http://www.wavelengthmag.com/wp-content/uploads/2016/12/Screen-Shot-2016-12-08-at-15.25.52.png',
@@ -345,10 +345,10 @@ mongoose.connect(
           },
           {
             spotName: 'Sagres',
-            Lat: '37.0168° N',
-            Long: '8.9406° W',
+            Lat: '37.005347',
+            Long: '-8.938249',
             country: 'Portugal',
-            region: '',
+            region: 'Algarve',
             image: 'https://coresites-cdn.factorymedia.com/surfeurope_new/wp-content/uploads/2016/01/algarve-surf.jpg',
             description: `The most consistent of the Sagres Beaches is generAlly pretty average. Lower tidal stages on the push are better as is a W swell. It doesn’t pick up as much swell as the west coast so it is a popular place for Beginner/Intermediates and the many local bodyboarders.
           Highly consistent, often crowded, currents and localism, but the water is clean, and amenities include showers, lifeguard, bodyboard surf school, surfshop and camping in town.`,
@@ -358,8 +358,8 @@ mongoose.connect(
           },
           {
             spotName: 'Paúl do Mar Madeira',
-            Lat: '32.7591° N',
-            Long: '17.2304° W',
+            Lat: '32.758551',
+            Long: '-17.231617',
             country: 'Portugal',
             region: 'Vila do Bispo',
             image: 'https://www.surfertoday.com/images/stories/jardimdomar.jpg',
@@ -371,9 +371,9 @@ mongoose.connect(
             user: users[0]
           },
           {
-            spotName: 'Elands Bay',
-            Lat: '32.3135° S',
-            Long: '18.3505° E',
+            spotName: 'Elands Bay', // tested 
+            Lat: '-32.315573',
+            Long: '18.335906',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/8szKWZscFbWzeBdoNa1Ci47Qnps=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-90798727-5c0831cd46e0fb0001125ba2.jpg',
@@ -384,8 +384,8 @@ mongoose.connect(
           },
           {
             spotName: 'Long Beach',
-            Lat: '34.1101° S',
-            Long: '18.2530° E',
+            Lat: '-34.131972',
+            Long: '18.335518',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/ZErInaYtTcdF84RJNSo7GzMzYx4=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-618679962-5c08322646e0fb0001d07735.jpg',
@@ -396,8 +396,8 @@ mongoose.connect(
           },
           {
             spotName: 'Muizenberg',
-            Lat: '34.136002° S',
-            Long: '18.430000° E',
+            Lat: '-34.108640',
+            Long: '18.470580',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/vU6-rsMGinnKzJ3d49Ipko-N7wA=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/_-54WEB-5c784bc0c9e77c0001d19cca.jpg',
@@ -408,8 +408,8 @@ mongoose.connect(
           },
           {
             spotName: 'Still Baai',
-            Lat: '33.9630° S',
-            Long: '22.4617° E',
+            Lat: '-34.375504',
+            Long: '21.424951',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/se3n2DckfJ5KCu9gOG18POpGNXM=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-753293567-5be2a47646e0fb00265a3833.jpg',
@@ -420,8 +420,8 @@ mongoose.connect(
           },
           {
             spotName: 'Victoria Bay',
-            Lat: '34.0027° S',
-            Long: '22.5510° E',
+            Lat: '22.564587',
+            Long: '-33.996030',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/6TOAqbUYEWF64BwYCidMBDcyQec=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/DSC_3661-5be2a4f2c9e77c0051048fd6.jpg',
@@ -432,8 +432,8 @@ mongoose.connect(
           },
           {
             spotName: 'Cape St Francis',
-            Lat: '34.1677° S',
-            Long: '24.8315° E',
+            Lat: '-34.213196',
+            Long: '24.835996',
             country: 'South Africa',
             region: 'Eastern Cape',
             image: 'https://www.tripsavvy.com/thmb/iSNAtbq_a2ldtmrchbNfWnGIbDc=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-83204263-5c083316c9e77c000189eb31.jpg',
@@ -444,8 +444,8 @@ mongoose.connect(
           },
           {
             spotName: 'Jeffreys Bay',
-            Lat: '34.0333° S',
-            Long: '24.9166° E',
+            Lat: '-34.035201',
+            Long: '24.932122',
             country: 'South Africa',
             region: 'Eastern Cape',
             image: 'https://www.tripsavvy.com/thmb/lSaHCR8u_Ds8OWn1VaWoQ6Y1RtQ=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-534624577-5c08337546e0fb0001206e41.jpg',
@@ -456,8 +456,8 @@ mongoose.connect(
           },
           {
             spotName: 'Green Point',
-            Lat: '33.9000° S',
-            Long: '18.4000° E',
+            Lat: '-33.899111',
+            Long: '18.408198',
             country: 'South Africa',
             region: 'KwaZulu-Natal',
             image: 'https://www.tripsavvy.com/thmb/vui4X3ke0o1XnJa57Ui8C6nigIE=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-93103552-5be2a68fc9e77c0051a5b34a.jpg',
@@ -468,8 +468,8 @@ mongoose.connect(
           },
           {
             spotName: 'Durban',
-            Lat: '29.8302° S',
-            Long: '31.0368° E',
+            Lat: '-29.850872',
+            Long: '31.039286',
             country: 'South Africa',
             region: 'KwaZulu-Natal',
             image: 'https://www.tripsavvy.com/thmb/qkfZIkcuVHfZTOBOdolWjOFRMWE=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-509251609-5c08346746e0fb000178e54c.jpg',
@@ -480,8 +480,8 @@ mongoose.connect(
           },
           {
             spotName: 'Dungeons',
-            Lat: '33.9415° S',
-            Long: '18.3735° E',
+            Lat: '-34.061714',
+            Long: '18.341088',
             country: 'South Africa',
             region: 'Western Cape',
             image: 'https://www.tripsavvy.com/thmb/mxNuVs36k7fPso7dM0ZfT4oVQv4=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-789382-5c08350f46e0fb0001d13883.jpg',
@@ -493,8 +493,8 @@ mongoose.connect(
 
           {
             spotName: 'Mimizan',
-            lat: '44.2004° N',
-            long: '1.2280° W',
+            lat: '44.210611',
+            long: '-1.298834',
             country: 'France',
             region: 'Landes',
             image: 'https://www.ultimatefrance.com/wp-content/uploads/2017/01/surf-surfing-spot-waves-mimizan.jpg',
@@ -506,8 +506,8 @@ mongoose.connect(
 
           {
             spotName: 'Lacanau',
-            lat: '45.0005° N',
-            long: '1.2024° W',
+            lat: '45.000605',
+            long: '-1.202491',
             country: 'France',
             region: ' Gironde',
             image: 'https://www.ultimatefrance.com/wp-content/uploads/2017/01/surf-lacanau-line-up.jpg',
@@ -519,8 +519,8 @@ mongoose.connect(
 
           {
             spotName: 'Côte Sauvage',
-            lat: '45.7420° N',
-            long: '1.2373° W',
+            lat: '45.686675',
+            long: '-1.188422',
             country: 'France',
             region: 'Poitou-Charente',
             image: 'http://baguetteshandlebarsdiscoverfrance.com/wp-content/uploads/2018/06/061418_1926_Top10things2.jpg',
@@ -532,12 +532,13 @@ mongoose.connect(
 
           {
             spotName: 'Plage de Port Blanc',
-            lat: '48.50° N',
-            long: '3.18° W',
+            lat: '48.838039',
+            long: '-3.305440',
             country: 'France',
             region: 'Britanny South',
-            image: '',
-            description: '',
+            image: 'https://www.belleileenmer.co.uk/medias-tourisme/drupal/belleile/scale_and_crop/665/428/255_255_255/aHR0cDovL21lZGlhcy50b3VyaXNtLXN5c3RlbS5mci8yLzIvMjE4MTk3X19tb2RpZmllLTEuanBn/b7400cf5afb6945ac8b859d8a6ea1727',
+            description: `A concentration of some of the best spots in Brittany, with some hollow and powerful waves on a 2km stretch. Top-to-bottom, hard breathing barrels when a WSW swell meets an E wind. Port-Blanc is the first bay, gets some N wind shelter from a cliff and will probably be the busiest spot. Port Marie breaks far offshore and Port-Rhu is a well-defined, localised peak, while Port-Bara is more accessible. Some reef anchors the sandbars and large clusters of rock affect the line-up at high tides, so exit before dead high.
+            Handles size, when the waves and rips get punishing. Often crowded on weekends.`,
             level: 'Advanced',
             typeOfWave: 'Beach Break',
             user: users[0]
@@ -545,8 +546,8 @@ mongoose.connect(
 
           {
             spotName: 'Côte des Basques',
-            lat: '43.4785° N',
-            long: '1.5670° W',
+            lat: '43.477352',
+            long: '-1.567406',
             country: 'France',
             region: 'Basque Country',
             image: 'https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium-5/plage-de-la-cote-des-basques-biarritz-john-harper.jpg',
@@ -558,8 +559,8 @@ mongoose.connect(
 
           {
             spotName: `Plage d'Hendaye`,
-            lat: '43.3742° N',
-            long: ' 1.7801° W',
+            lat: '43.373491',
+            long: '-1.775032',
             country: 'France',
             region: 'Basque Country',
             image: 'https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/sites/regions_france3/files/styles/top_big/public/assets/images/2016/03/10/plage_hendaye.jpg?itok=S3KpMF4V',
@@ -571,8 +572,8 @@ mongoose.connect(
 
           {
             spotName: 'Les Culs Nus',
-            lat: '43.6800° N',
-            long: '1.4385° W',
+            lat: '43.679946',
+            long: '-1.441414',
             country: 'France',
             region: 'Landes',
             image: 'https://farm2.staticflickr.com/1519/24684452059_ef6ff276a0_b.jpg',
@@ -584,8 +585,8 @@ mongoose.connect(
 
           {
             spotName: 'Les Estagnots',
-            lat: '43.6848° N',
-            long: '1.4378° W',
+            lat: '43.684798',
+            long: '-1.441377',
             country: 'France',
             region: 'Landes',
             image: 'https://spot-thumbnails.cdn-surfline.com/spots/584204204e65fad6a7708fec/584204204e65fad6a7708fec_1500.jpg',
@@ -607,11 +608,10 @@ mongoose.connect(
             typeOfWave: 'Beach Break',
             user: users[0]
           },
-
           {
             spotName: 'Hossegor (La Graviere)',
-            lat: '43.6738° N',
-            long: '1.4409° W',
+            lat: '-1.442882',
+            long: '-1.442882',
             country: 'France',
             region: 'Landes',
             image: 'https://i.pinimg.com/originals/a2/db/16/a2db16de5f2509377b73773512da2a39.jpg',
@@ -634,8 +634,8 @@ mongoose.connect(
           },
           {
             spotName: 'Mysteries',
-            lat: '30° 32.57 N',
-            long: '9° 42.382 W',
+            lat: '30.54916667',
+            long: '9.80611111',
             country: 'Morocco',
             region: 'Central Morocco',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/anchor-point-sunset-surf-berbere-surf-school-taghazout.jpg',
@@ -645,9 +645,9 @@ mongoose.connect(
             user: users[0]
           },
           {
-            spotName: 'Watergate Bay',
-            lat: '',
-            long: '',
+            spotName: 'Watergate Bay', // CHANEEEEGEMMMMMMMMEEEEEE
+            lat: '50.441275',
+            long: '-5.047543',
             country: 'UK',
             region: 'Cornwall',
             image: 'https://kitesurfinguk.org.uk/wp-content/uploads/2016/02/watergate-bay-cornwall.jpg',
@@ -706,8 +706,8 @@ mongoose.connect(
           },
           {
             spotName: 'Cocoa Beach Pier',
-            lat: '28.3678° N',
-            long: '80.6028° W',
+            lat: '28.368982',
+            long: '-80.601849',
             country: 'USA',
             region: 'Florida',
             image: 'https://www.visitspacecoast.com/sites/default/files/styles/large_image_s/public/2019-05/orlandos_closest_beach_blog_image_0.jpg?itok=n3JIWSYN',
@@ -720,8 +720,8 @@ mongoose.connect(
           },
           {
             spotName: 'Daytona Beach',
-            lat: '29.2108° N',
-            long: '81.0228° W',
+            lat: '29.238831',
+            long: ' -81.012779',
             country: 'USA',
             region: 'Florida',
             image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/ed/13/36/birdseye-view-of-daytona.jpg',
@@ -733,8 +733,8 @@ mongoose.connect(
           },
           {
             spotName: 'North Jetty Park',
-            lat: '27.1156',
-            long: '82.4674° W',
+            lat: '27.114132',
+            long: ' -82.468819',
             country: 'USA',
             region: 'Florida',
             image: 'https://photos.eltiempo.es/29/61/bac823c6adda67f8b2882b9d580d65e1_720x560.jpg',
@@ -747,8 +747,8 @@ mongoose.connect(
           },
           {
             spotName: 'Jap Rock',
-            lat: '43.4047° N',
-            long: '2.6993° W',
+            lat: '26.392515',
+            long: '-80.065592',
             country: 'USA',
             region: 'Florida',
             image: 'http://www.geosciences.fau.edu/images/jap-rock-1.jpg',
