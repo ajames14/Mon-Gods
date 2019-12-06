@@ -619,6 +619,144 @@ mongoose.connect(
             level: 'Intermediate',
             typeOfWave: 'Beach Break',
             user: users[0]
+          },
+          {
+            spotName: 'Essaouira Beach',
+            lat: '31.505817',
+            long: '-9.766089',
+            country: 'Morocco',
+            region: 'Central Morocco',
+            image: 'https://ec2-im-1.msw.ms/md/image.php?id=197026&type=PHOTOLAB&resize_type=PHOTOLAB_FULL&fromS3',
+            description: 'Great if you are just starting out on your surfing journey or an intermediate surfer. The beach has a soft sand bottom is best at high tide with light north wind. The entire bay is protected by the Isle de Mogador and spans a full 180 degrees. Where you surf depends on the swell size. When it is big you surf nearer to the port and when it is small you go to the other end of the beach near the lighthouse.',
+            level: 'Beginners',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Mysteries',
+            lat: '30° 32.57 N',
+            long: '9° 42.382 W',
+            country: 'Morocco',
+            region: 'Central Morocco',
+            image: 'https://surfberbere.com/wp-content/uploads/2016/03/anchor-point-sunset-surf-berbere-surf-school-taghazout.jpg',
+            description: 'This is one of other world class right hander just 100m north of Anchor Point, on the next beach stretch. The take off zone is on a reef break and is fairly more accessible than some other points in the area. On its good days, it can reach about 250m long with barrels but it cannot handle a very large swell - it closes out over 2m. Mysteries can get hollow and fast though as well, suitable for intermediates and advanced surfers. One of the most fun and rippable waves in the area.',
+            level: 'Advanced',
+            typeOfWave: 'Reef Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Watergate Bay',
+            lat: '',
+            long: '',
+            country: 'UK',
+            region: 'Cornwall',
+            image: 'https://kitesurfinguk.org.uk/wp-content/uploads/2016/02/watergate-bay-cornwall.jpg',
+            description: 'Long stretch of fun beachbreaks. Watergate Bay has two miles of beach at low tide, so if its crowded in Newquay this is a good option – although it does get busy towards high tide. Popular with kitesurfers. One of the best equipped beaches in Britain: surf shop, surf school, bistro, bar and hotel. Ample parking above the beach.',
+            level: 'Beginner',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Sennan Cove',
+            lat: '50.079172',
+            long: '-5.698482',
+            country: 'UK',
+            region: 'Cornwall',
+            image: 'https://www.vellandreathcornishcottages.com/wp-content/gallery/surfing-holidays-sennen-cornwall/surfing-holidays-sennen-cornwall-031.jpg',
+            description: 'One of the most consistent breaks in Britain on account of its exposed location, Sennen can hold good-sized waves and may have surf when everywhere else is flat. Local longboarder and former European champion Sam Bleakley says, "After periods of either flat surf or east winds, the sand banks can get good - pulse in a four-foot swell with a 10-second-plus wave period and the breaks come alive.',
+            level: 'Intermediate',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Bantham',
+            lat: '50.278579',
+            long: '-3.880968',
+            country: 'UK',
+            region: 'Devon',
+            image: 'https://ec2-im-1.msw.ms/md/image.php?id=245732&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3',
+            description: 'Picks up more swell than any other south Devon beach and has a variety of peaks depending on the stage of the tide. You can get some long rides here, especially on a longboard, but watch out for the rip on the east side of the beach.',
+            level: 'Intermediate',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Thurso East',
+            lat: '58.600291',
+            long: '-3.507584',
+            country: 'UK',
+            region: 'Scotland',
+            image: 'https://wavelengthmag.com/wp-content/uploads/2016/07/51.jpg',
+            description: `One of the best waves in Europe. Thurso East is a right-hand reef break over a flat, kelp-covered rock shelf, best on a big north-west swell when it may hold surfable waves of triple overhead and more. The break\'s reputation means that it'll always be busy on a good swell, so treat the locals with respect and take your turn.`,
+            level: 'Advanced',
+            typeOfWave: 'Reef Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Porth Neigwl/Hell\'s Mouth',
+            lat: '52.810462',
+            long: '-4.556871',
+            country: 'UK',
+            region: 'Wales',
+            image: 'https://ec2-im-1.msw.ms/md/image.php?id=377434&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3',
+            description: 'The best-known surf spot in north Wales, Hell\'s Mouth is an impressive four-mile long bay with peaks along its length on a good swell. The better waves tend to be beneath the cliffs at the south-east end of the bay, and it will be crowded on good swells.',
+            level: 'Advanced',
+            typeOfWave: 'Reef Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Cocoa Beach Pier',
+            lat: '28.3678° N',
+            long: '80.6028° W',
+            country: 'USA',
+            region: 'Florida',
+            image: 'https://www.visitspacecoast.com/sites/default/files/styles/large_image_s/public/2019-05/orlandos_closest_beach_blog_image_0.jpg?itok=n3JIWSYN',
+            description: `Cocoa Beach is home to Kelly Slater and the biggest ‘surf shop’ in the world. This is quite surprising due to the lack of quality waves here. 
+                          Cape Canaveral shields the best of the N and a long, gently-sloping sand shelf cuts the power. The main hazard is trying to score waves if Kelly Slater and his mates are out. 
+                          That’s if you can find a parking spot, which always costs something`,
+            level: 'Beginners',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Daytona Beach',
+            lat: '29.2108° N',
+            long: '81.0228° W',
+            country: 'USA',
+            region: 'Florida',
+            image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/ed/13/36/birdseye-view-of-daytona.jpg',
+            description: `This used to be the hot spot back in the ’60s and ’70s but the crowd has drifted south to greener pastures. Same deal as Sunglow, except there is a chair lift along the length of the pier. Pity it doesn’t drop you out the back when it’s big.
+                          If you want to surf Main St in summer and park on the beach, get there early, otherwise it will be expensive meter parking. Beware: focal point of midsummer college revelers.`,
+            level: 'Beginners',
+            typeOfWave: 'Beach Break',
+            user: users[0]
+          },
+          {
+            spotName: 'North Jetty Park',
+            lat: '27.1156',
+            long: '82.4674° W',
+            country: 'USA',
+            region: 'Florida',
+            image: 'https://photos.eltiempo.es/29/61/bac823c6adda67f8b2882b9d580d65e1_720x560.jpg',
+            description: `This mile-long jetty blocks any average swell from a southerly direction. Anything with north in it can give some long righthanders and shorter lefts. Wedgy waves are formed from mid incoming through high tide. 
+                          Experienced longboarders dominate the peak; younger rippers dominate the scraps, leaving some tasty crumbs for well-behaved visitors.
+                          North Jetty is always crowded, and the longstanding local pecking order demands respect. Parking is right on the beach, which can cause problems at high tide. There is a campground directly behind the beach.`,
+            level: 'Beginners',
+            typeOfWave: 'Point Break',
+            user: users[0]
+          },
+          {
+            spotName: 'Jap Rock',
+            lat: '43.4047° N',
+            long: '2.6993° W',
+            country: 'USA',
+            region: 'Florida',
+            image: 'http://www.geosciences.fau.edu/images/jap-rock-1.jpg',
+            description: `Jap Rock is 5 km (3 miles) from the city of Boca Raton. If you plan a vacation in South Florida, look for hotels and other accommodation in Boca Raton. 
+                          Boca Raton has rooms for a wide range of budgets as well as car hire and transport links. Best time to go is when there is a swell.`,
+            level: 'Intermediate',
+            typeOfWave: 'Reef Break',
+            user: users[0]
           }
         ]
         )

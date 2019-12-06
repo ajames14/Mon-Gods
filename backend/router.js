@@ -18,6 +18,9 @@ router.route('/spots/:id')
   .put(secureRoute, spots.update)
   .delete(secureRoute, spots.remove)
 
+router.route('/spots/:id/rate')
+  .post(secureRoute, spots.addRating)
+
 router.route('/spots/:id/comments')
   .post(secureRoute, spots.createComment)
 
