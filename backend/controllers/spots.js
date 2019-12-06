@@ -6,6 +6,8 @@
 const Spot = require('../models/Spot')
 
 function create(req, res) {
+
+  
   req.body.user = req.currentUser
   Spot.create(req.body)
     .then(spot => res.status(201).json(spot))
