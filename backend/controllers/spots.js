@@ -11,7 +11,20 @@ function create(req, res) {
   req.body.user = req.currentUser
   Spot.create(req.body)
     .then(spot => res.status(201).json(spot))
-    .catch(err => console.log(err))
+    .catch(err => {
+      res.status(422).json({ 
+        spotName: 'Spot already exists',
+        lat: 'Please provide latitude (e.g. -32.315573)',
+        long: 'Please provide longitude (e.g. 18.335906)',
+        country: 'Country Required',
+        region: 'Region Required',
+        image: 'Image Required',
+        description: 'Please provide description',
+        level: 'Please provide level',
+        typeOfWave: 'Please give wave type'
+      })
+    }
+    )
 }
 
 function index(req, res) {
