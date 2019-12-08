@@ -1,6 +1,8 @@
 
-
+const express = require('express')
 const Spot = require('../models/Spot')
+
+const getUsers = express()
 
 function create(req, res) {
 
@@ -36,7 +38,7 @@ function show(req, res) {
   Spot
     .findById(req.params.id)
     .then(spot => {
-      console.log('My spots is', spot)
+      // console.log('My spots is', spot)
       if (!spot) res.status(404).json({ message: '404 Not found' })
       else res.status(200).json(spot)
     })
@@ -87,6 +89,12 @@ function addRating(req, res) {
     .then(spot => {
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       if (req.body.rate < 1 || req.body.rate > 5) return res.status(404).json({ message: 'Invalid rating' })
+      spot.rating.forEach(e => {
+        if (!req.currentUser._id.equals(e.user)) {
+          console.log('user')
+          return res.status(401).json({ message: 'You have already rated this spot' })
+        }
+      })
       spot.rating.push(req.body)
       return spot.save()
     })
