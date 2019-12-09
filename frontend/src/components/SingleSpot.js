@@ -4,10 +4,6 @@ import Auth from '../lib/auth'
 
 const SingleSpot = (props) => {
 
-  // const errorInitialState = {
-  //   errors: ''
-  // }
-
   const [data, setData] = useState([])
   const [rating, setRate] = useState(0)
   const [nums, setNum] = useState([])

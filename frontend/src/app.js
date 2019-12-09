@@ -13,6 +13,7 @@ import NewSpot from './components/NewSpot'
 import EditSpot from './components/EditSpot'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
+import CountrySpots from './components/Country'
 
 
 
@@ -22,7 +23,8 @@ const App = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/spots' component={Spots} />
-      <Route path='/spots/:id' component={SingleSpot} />
+      <Route exact path='/spots/countries/:country' component={CountrySpots} />
+      <Route exact path='/spots/:id' component={SingleSpot} />
       <Route path='/register' component={Register} />
       <Route path='/login' component={Login} />
       <Route path='/newspot' component={NewSpot} />

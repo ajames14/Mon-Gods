@@ -20,30 +20,28 @@ body {
 /*  HOME PAGE                   */
 /* ---------------------------- */
 
-.hero {
+#home-page {
   font-family: 'Bebas Neue', cursive;
   color: white;
-// font-family: 'Anton', sans-serif;
-// font-family: 'Fjalla One', sans-serif;
-  // background-image: url('https://images.unsplash.com/photo-1559627755-42212e5c5fdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
   height: 100vh;
-  background-position: left;
+  background-position: center;
   background-image: url('https://i.pinimg.com/originals/18/92/17/18921735a859b696c412f59c8ce5e220.jpg');
   background-size: cover;
   position: relative;
-}
-
-#hero-container {
-  display: flex;
-  align-items: flex-start;
+  #titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   h1 {
     font-size: 5.6rem;
     margin-top: 15px;
     letter-spacing: 0.1rem;
+    margin-right: 600px;
   }
   h2 {
     font-size: 2.2rem;
-
+    margin-right: 600px;
   }
   #search {
     margin-top: 15px;
@@ -52,7 +50,16 @@ body {
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid white;
     font-size: 1.1rem;
+    margin-right: 600px;
   }
+}
+
+/* ---------------------------- */
+/*  Country Page            */
+/* ---------------------------- */
+
+#country-title {
+  text-transform: capitalize;
 }
 
 /* ---------------------------- */
@@ -63,3 +70,4 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1rem;
 }
+
