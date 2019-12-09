@@ -22,7 +22,7 @@ const SingleSpot = (props) => {
             <p className="subtitle">
               {`${data.country} - ${data.region}`}
             </p>
-            <p>
+            <p id="description">
               {data.description}
             </p>
           </div>
