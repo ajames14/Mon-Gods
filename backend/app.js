@@ -16,7 +16,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.use((req, resp, next) => {
-  console.log(`${req.method} to ${req.url}`)
+  // console.log(`${req.method} to ${req.url}`)
   next()
 })
 

@@ -90,8 +90,8 @@ function addRating(req, res) {
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       if (req.body.rate < 1 || req.body.rate > 5) return res.status(404).json({ message: 'Invalid rating' })
       spot.rating.forEach(e => {
-        if (!req.currentUser._id.equals(e.user)) {
-          console.log('user')
+        if (req.currentUser._id.toString() === e.user._id.toString()) {
+          console.log('matched user')
           return res.status(401).json({ message: 'You have already rated this spot' })
         }
       })

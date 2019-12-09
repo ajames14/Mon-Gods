@@ -4,15 +4,12 @@ import Auth from '../lib/auth'
 
 const SingleSpot = (props) => {
 
-  // const errorInitialState = {
-  //   errors: ''
-  // }
-
   const [data, setData] = useState([])
   const [rating, setRate] = useState(0)
   const [nums, setNum] = useState([])
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
+
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
@@ -20,7 +17,8 @@ const SingleSpot = (props) => {
       .then(resp => setData(resp))
       .then(createRating())
     return () => console.log('Unmounting component')
-  }, [])
+  }, [rating])
+  // should run twice after first loading the spot
 
   let response = {}
 
@@ -45,16 +43,94 @@ const SingleSpot = (props) => {
         }
       })
       .then(resp => setRate(resp))
+      .then(() => {
+        if (rating === 0) {
+          console.log('rating undefined')
+        } else {
+          waves()
+        }
+      })
     return () => console.log('updated')
   }
 
+  // how the stars/waves are defined :
+  // 1 = 0 - 20
+  // 2 = 21 - 40
+  // 3 = 41 - 60
+  // 4 = 61 - 80
+  // 5 = 81 - 100%
 
+  const wave1 = document.querySelector('#wave1')
+  const wave2 = document.querySelector('#wave2')
+  const wave3 = document.querySelector('#wave3')
+  const wave4 = document.querySelector('#wave4')
+  const wave5 = document.querySelector('#wave5')
+
+  const waveList = [wave1, wave2, wave3, wave4, wave5]
+
+  const changeWave = (w) => {
+    console.log(w)
+    for (let i = 0; i < w; i++) {
+      waveList[i].style.width = '100%'
+    }
+    for (let i = w; i < waveList.length; i++) {
+      waveList[i].style.width = '0%'
+    }
+  }
+
+  const waveCheck = (w) => {
+    const newRating = rating.toFixed(2)
+    console.log('sting 3', newRating.toString()[3])
+    if (newRating.toString()[3] !== '0') {
+      console.log(3)
+      if (newRating.toString()[2] === '2' || newRating.toString()[2] === '4' || newRating.toString()[2] === '6' || newRating.toString()[2] === '8') {
+        console.log(parseInt(newRating.toString()[3]) * 5 + '%')
+        waveList[waveList.length - w].style.width = parseInt(newRating.toString()[3]) * 5 + '%'
+      } else {
+        console.log((parseInt(rating.toString()[3]) + 10) / 20 * 100 + '%')
+        waveList[waveList.length - w].style.width = (parseInt(rating.toString()[3]) + 10) / 20 * 100 + '%'
+      }
+      //newRating.toString()[2] !== undefined || 
+    } else if (newRating.toString()[2] !== 0) {
+      console.log(2)
+      if (newRating === '0.20' || newRating === '0.40' || newRating === '0.60' || newRating === '0.80') {
+        waveList[waveList.length - w].style.width = '100%'
+      } else {
+        waveList[waveList.length - w].style.width = '50%'
+      }
+    } else {
+      console.log(1)
+      waveList[waveList.length - w].style.width = newRating.toString()[0] * 100 + '%'
+    }
+  }
+
+  const waves = () => {
+    if (rating === undefined) {
+      return
+    } else if (rating.toFixed(2) < 0.21) {
+      changeWave(1)
+      waveCheck(5)
+    } else if (rating.toFixed(2) < 0.41) {
+      changeWave(2)
+      waveCheck(4)
+    } else if (rating.toFixed(2) < 0.61) {
+      changeWave(3)
+      waveCheck(3)
+    } else if (rating.toFixed(2) < 0.81) {
+      changeWave(4)
+      waveCheck(2)
+    } else if (rating.toFixed(2) >= 0.81) {
+      changeWave(5)
+      waveCheck(1)
+    }
+  }
   const con = (num) => {
     submitRating(num)
   }
 
   function submitRating(num) {
-    console.log('submitted')
+    // console.log(rating)
+    // console.log('submitted')
     axios.post(`/api/spots/${props.match.params.id}/rate`, { rate: num }, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -66,6 +142,9 @@ const SingleSpot = (props) => {
           setError('Unauthorized - please log in')
         }
       })
+    if (rating !== undefined) {
+      waves()
+    }
   }
 
   function checkRating() {
@@ -74,6 +153,8 @@ const SingleSpot = (props) => {
     }
     return rating.toFixed(2)
   }
+
+
 
   return (
     <section className="section">
@@ -93,7 +174,7 @@ const SingleSpot = (props) => {
           <div className="column is-half-tablet">
             <img src={data.image} />
           </div>
-          <div>Rating: {checkRating()} / {checkRating() * 100}%
+          <div>Rating: {checkRating()} / {(checkRating() * 100).toFixed(2)}%
             <br />
             Or: {((checkRating()) * 5).toFixed(2)} stars
             <br />
@@ -108,29 +189,27 @@ const SingleSpot = (props) => {
         {error && <small className="help is-danger">
           {error}
         </small>}
+        <br /> <br />
+        <section className="section columns">
+          <div className="imgDiv">
+            <img className="ratingImg" id="wave1" src='../images/wave.png' />
+          </div>
+          <div className="imgDiv">
+            <img className="ratingImg" id="wave2" src='../images/wave.png' />
+          </div>
+          <div className="imgDiv">
+            <img className="ratingImg" id="wave3" src='../images/wave.png' />
+          </div>
+          <div className="imgDiv">
+            <img className="ratingImg" id="wave4" src='../images/wave.png' />
+          </div>
+          <div className="imgDiv">
+            <img className="ratingImg" id="wave5" src='../images/wave.png' />
+          </div>
+        </section>
       </div>
     </section>
   )
 }
 
 export default SingleSpot
-
-
-
-  // function updateRating() {
-  //   fetch(`/api/spots/${props.match.params.id}`)
-  //     .then(resp => resp.json())
-  //     .then(resp => {
-  //       response = resp
-  //     })
-  //     .then(() => {
-  //       console.log(nums)
-  //       const added = nums.reduce((pre, i) => {
-  //         return pre + i
-  //       })
-  //       console.log(added)
-  //       return (added / (response.rating.length * 5))
-  //     })
-  //     .then(resp => setRate(resp))
-  //   return () => console.log('updated')
-  // }
