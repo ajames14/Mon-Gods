@@ -71,3 +71,26 @@ body {
   font-size: 1rem;
 }
 
+/* ---------------------------- */
+/*  Rating Styles               */
+/* ---------------------------- */
+
+.ratingImg {
+  // background-color: blue;
+  object-fit: cover;
+  // border-radius: 1000px;
+  object-position: 1px;
+  background-size: 150%;
+  width: 0%;
+  height: 50px;
+
+}
+
+.imgDiv {
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  // background-color: rgba(211, 211, 211, 0.247);
+  // background-image: url('../images/waves-png-clipart-illustration-wave-11563627128ah06bun5cy.png');
+  margin: 3px;
+}

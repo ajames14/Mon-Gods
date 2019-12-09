@@ -13,7 +13,6 @@ class Navbar extends React.Component {
 
   handleLogout() {
     Auth.logout()
-    this.props.history.push('/')
   }
 
   toggleNavbar() {
@@ -57,10 +56,8 @@ class Navbar extends React.Component {
             <div className="navbar-item">
               <Link className="navbar-item" to="/login">Login</Link>
             </div>
-            {Auth.isAuthorized() && <div className="navbar-item">
-              <div className="navbar-item" onClick={() => this.handleLogout()}>
-                Logout
-              </div>
+            {Auth.isAuthorized() && <div className="navbar-item" onClick={() => this.handleLogout()}>
+              <Link className="navbar-item" to="/">Logout</Link>
             </div>}
           </div>
         </div>
