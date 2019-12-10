@@ -123,7 +123,7 @@ const SingleSpot = (props) => {
         waveList[waveList.length - w].style.width = (parseInt(rating.toString()[3]) + 10) / 20 * 100 + '%'
       }
       //newRating.toString()[2] !== undefined || 
-    } else if (newRating.toString()[2] !== 0) {
+    } else if (newRating.toString()[2] !== '0') {
       console.log(2)
       if (newRating === '0.20' || newRating === '0.40' || newRating === '0.60' || newRating === '0.80') {
         waveList[waveList.length - w].style.width = '100%'
