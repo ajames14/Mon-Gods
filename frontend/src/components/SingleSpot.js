@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
+import ForecastChart from './ForecastCharts'
 
 const SingleSpot = (props) => {
 
@@ -10,17 +11,48 @@ const SingleSpot = (props) => {
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
 
+  const [forecastData, setForecastData] = useState([])
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
       .then(resp => resp.json())
-      .then(resp => setData(resp))
+      .then(resp =>
+        setData(resp),
+      )
       .then(createRating())
+      // .then(getForecast())
+    // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
+    // console.log('lat', lat)
     return () => console.log('Unmounting component')
   }, [rating])
   // should run twice after first loading the spot
 
   let response = {}
+
+
+  // function getForecast() {
+  //   const lat = 60.936;
+  //   const lng = 5.114;
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${lat}&lng=${lng}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`, {
+  //     headers: {
+  //       'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
+  //     }
+  //   })
+  //     .then(resp => resp.json())
+  //     .then(resp => {
+  //       console.log("teklslkalksdjlakjdl",resp)
+  //     })
+  //   // console.log("tezsssashdajhsbd",forecastData)
+  // }
+
+  // function getForecast() {
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${data.lat}&lng=${data.long}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`)
+  //     .then(resp => resp.json())
+  //     .then(resp =>
+  //       setForecastData(resp),
+  //     )
+  //   console.log(forecastData)
+  // }
 
   function createRating() {
     setNum([])
@@ -208,6 +240,7 @@ const SingleSpot = (props) => {
           </div>
         </section>
       </div>
+      <ForecastChart lat={data.lat} lon={data.long}/>
     </section>
   )
 }

@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom'
 const CountrySearch = () => {
 
   const [data, setData] = useState([])
-  const [spotFilter, setFilter] = useState('')
+  const [countryFilter, setCountryFilter] = useState('')
+  const [isHidden, setHidden] = useState(true)
 
   //create an array of all available countries 
   const [countriesArr, setCountriesArr] = useState([])
@@ -16,25 +17,33 @@ const CountrySearch = () => {
       .then(resp => resp.json())
       .then(resp => {
         setData(resp),
-          getUnique(resp)
+          getUnique(resp),
+          console.log('is hidden init', isHidden)
+        console.log('countryFilter', countryFilter)
       })
-    return () => console.log('Unmounting component')
+    return () => console.log('Unmounting component') 
   }, [])
 
   function getUnique(data) {
     let countries = []
     data.map((elem) => { countries.push(elem.country) })
-    console.log('COUNTRIES', countries)
     let unique = [...new Set(countries)]
-    console.log(unique)
     setCountriesArr(unique)
-    console.log('unique countriesArr11111', countriesArr)
   }
-  console.log('unique countriesArr2', countriesArr)
+
   const filter = (e) => {
-    setFilter(e.target.value)
-    console.log('filter is', spotFilter)
+    setCountryFilter(e.target.value)
+    // check each time something is entered into the the search field
+    toggleVisibility()
+    console.log('is hidden 22222', isHidden)
+    console.log('countryFilter 2222222on', countryFilter)
   }
+
+  // if countryFilter state is empty setHidden as true
+  const toggleVisibility = () => countryFilter ? setHidden(true) : setHidden(false)
+
+  console.log('ALL DATA', data)
+
   return (
     <Element name="test1" className="element" >
       <div className="field">
@@ -52,12 +61,18 @@ const CountrySearch = () => {
       </div>
       {countriesArr
         .filter(elem => {
-          return elem.toLowerCase().includes(spotFilter.toLowerCase())
+          return elem.toLowerCase().includes(countryFilter.toLowerCase())
         })
         .map((country, i) => {
           return (
             <Link key={i} to={`/spots/countries/${country.toLowerCase()}`}>
-              <li value={country}>{country}</li>
+              <li style={{
+                listStyleType: "none",
+                //if is hidden is true then display none, else if something is in the filter filed display
+                display: isHidden ? 'none' : 'block'
+              }}
+                value={country}>{country}
+              </li>
             </Link>
           )
         })

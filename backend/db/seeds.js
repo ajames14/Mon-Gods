@@ -45,7 +45,7 @@ mongoose.connect(
             country: 'Morocco',
             region: 'Taghazout',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/devils_rock_surf_school_morocco.jpg',
-            description: 'Sand bottom beach break with peaky left and rights. Great for improver/beginners, closes out on big swells. To the left, around the headland, is Banana Point and for the experienced surfer a gem lies between the two spots. Can be crowded on the weekends with locals. Relaxed vibe and great cafe on the beach.',
+            description: 'Sand bottom beach break with peaky left and rights. Great for improver/Beginner, closes out on big swells. To the left, around the headland, is Banana Point and for the experienced surfer a gem lies between the two spots. Can be crowded on the weekends with locals. Relaxed vibe and great cafe on the beach.',
             level: 'Intermediate',
             typeOfWave: 'Beach Break',
             user: users[0]
@@ -70,7 +70,7 @@ mongoose.connect(
             region: 'Central Morocco',
             image: 'https://www.surfholidays.com/accommodation/morocco/imsouane/travel-surf-morocco',
             description: 'Last stop before Tarhazoute, Immesouane remained authentic until the modern fishing port was built. Fortunately the long, mellow rights keep wrapping into the well-protected south-facing bay, while several well-defined peaks grace the cathedral side. Highly consistent and sometimes crowded.',
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Point Break',
             user: users[0]
           },
@@ -118,7 +118,7 @@ mongoose.connect(
             region: 'Central Morocco',
             image: 'https://surfberbere.com/wp-content/uploads/2016/03/tamri_morocco_surf_spot.png',
             description: 'Located at the mouth of a ‘oued’ irrigating banana plantations, this ultra consistent beachbreak is the go when Tarhazoute is flat. Unfortunately it is onshore in the N winds. Strong rips at 4ft+.',
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Point Break',
             user: users[0]
           },
@@ -197,7 +197,7 @@ mongoose.connect(
             image: 'http://www.turismo.gal/imaxes/mdaw/mduw/~edisp/~extract/TURGA050534~1~staticrendition/tg_carrusel_cabecera_grande.jpg',
             description: `Good quality left and righthand reefbreak. Fairly short rides with some barrel sections. Needs large NW swell and mid to high tide to get going. SW wind OK.
           Near to the city of Vigo, so always crowded when on, with a degree of localism. Surf shop nearby. Some residential and stormwater pollution.`,
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Beach Break',
             user: users[0]
           },
@@ -235,7 +235,7 @@ mongoose.connect(
             image: 'https://photos.eltiempo.es/29/61/bac823c6adda67f8b2882b9d580d65e1_720x560.jpg',
             description: `Very consistent beachbreak with several peaks. Good semi-permanent high-tide peak at western end of beach. Works on small to medium swells. 
                       One of the most crowded spots in Spain. Highly competitive. Surf shops and camping nearby. Estuarine and stormwater pollution, particularly after heavy rains.`,
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Beach Break',
             user: users[0]
           },
@@ -511,7 +511,7 @@ mongoose.connect(
             country: 'France',
             region: ' Gironde',
             image: 'https://www.ultimatefrance.com/wp-content/uploads/2017/01/surf-lacanau-line-up.jpg',
-            description: 'ASP contest venue since 1979, this is surf central for the Bordeaux area. The reason? Consistent surf, easily checked from the boardwalk at Plage Centrale before opting for a session at La Nord, La Sud or Super Sud among 14km of beaches ideal with a medium size W-NW swell. Handles more size thanks to the deep scalloped baines around the rock jetties that are there to hold the sand in place. Every bit as good as Landes, especially in summer when it is often bigger in the W windswells. Fast peeling low tide runners or mid to high tide shories tapering into the rips are sometimes separated by a deep trench, or spin all the way through. Like all Biscay beachies, its fine for beginners when small and friendly, but a real challenge when overhead and bombing, not least because of the wicked rips.',
+            description: 'ASP contest venue since 1979, this is surf central for the Bordeaux area. The reason? Consistent surf, easily checked from the boardwalk at Plage Centrale before opting for a session at La Nord, La Sud or Super Sud among 14km of beaches ideal with a medium size W-NW swell. Handles more size thanks to the deep scalloped baines around the rock jetties that are there to hold the sand in place. Every bit as good as Landes, especially in summer when it is often bigger in the W windswells. Fast peeling low tide runners or mid to high tide shories tapering into the rips are sometimes separated by a deep trench, or spin all the way through. Like all Biscay beachies, its fine for Beginner when small and friendly, but a real challenge when overhead and bombing, not least because of the wicked rips.',
             level: 'Intermediate',
             typeOfWave: 'Beach Break',
             user: users[0]
@@ -551,7 +551,7 @@ mongoose.connect(
             country: 'France',
             region: 'Basque Country',
             image: 'https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium-5/plage-de-la-cote-des-basques-biarritz-john-harper.jpg',
-            description: `The birthplace of France's surfing scene remains popular with longboarders enjoying mellow walls sheltered from northern winds. There's usually a peak close to the headland and another defined peak a bit further down the beach. While it is friendly and fun-loving for mals and beginners at knee to shoulder-high, there is a bit more energy at headhigh plus, especially if you drift south. The offshore islands filter and organise the swell a bit, but it is mainly a summer spot that is still rideable in the afternoon onshores.`,
+            description: `The birthplace of France's surfing scene remains popular with longboarders enjoying mellow walls sheltered from northern winds. There's usually a peak close to the headland and another defined peak a bit further down the beach. While it is friendly and fun-loving for mals and Beginner at knee to shoulder-high, there is a bit more energy at headhigh plus, especially if you drift south. The offshore islands filter and organise the swell a bit, but it is mainly a summer spot that is still rideable in the afternoon onshores.`,
             level: 'Intermediate',
             typeOfWave: 'Point Break',
             user: users[0]
@@ -564,7 +564,7 @@ mongoose.connect(
             country: 'France',
             region: 'Basque Country',
             image: 'https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/sites/regions_france3/files/styles/top_big/public/assets/images/2016/03/10/plage_hendaye.jpg?itok=S3KpMF4V',
-            description: 'This is the answer when everything else is closing-out. A long stretch of average beachbreaks offers a wide choice of peaks; usually better close to the casino or the south jetty. The place is perfect for beginners, which explains the amazing number of surf schools. The two rocks of Les Deux Jumeaux to the northeast occasionally hold a solid right that requires patience. Further out off the eastern headland is Vanthrax, an imaginatively named death peak that spews out massive left barrels a handful of times a year. Crazy bodyboarders and pros only.',
+            description: 'This is the answer when everything else is closing-out. A long stretch of average beachbreaks offers a wide choice of peaks; usually better close to the casino or the south jetty. The place is perfect for Beginner, which explains the amazing number of surf schools. The two rocks of Les Deux Jumeaux to the northeast occasionally hold a solid right that requires patience. Further out off the eastern headland is Vanthrax, an imaginatively named death peak that spews out massive left barrels a handful of times a year. Crazy bodyboarders and pros only.',
             level: 'Intermediate',
             typeOfWave: 'Point Break',
             user: users[0]
@@ -628,7 +628,7 @@ mongoose.connect(
             region: 'Central Morocco',
             image: 'https://ec2-im-1.msw.ms/md/image.php?id=197026&type=PHOTOLAB&resize_type=PHOTOLAB_FULL&fromS3',
             description: 'Great if you are just starting out on your surfing journey or an intermediate surfer. The beach has a soft sand bottom is best at high tide with light north wind. The entire bay is protected by the Isle de Mogador and spans a full 180 degrees. Where you surf depends on the swell size. When it is big you surf nearer to the port and when it is small you go to the other end of the beach near the lighthouse.',
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Beach Break',
             user: users[0]
           },
@@ -714,7 +714,7 @@ mongoose.connect(
             description: `Cocoa Beach is home to Kelly Slater and the biggest ‘surf shop’ in the world. This is quite surprising due to the lack of quality waves here. 
                           Cape Canaveral shields the best of the N and a long, gently-sloping sand shelf cuts the power. The main hazard is trying to score waves if Kelly Slater and his mates are out. 
                           That’s if you can find a parking spot, which always costs something`,
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Beach Break',
             user: users[0]
           },
@@ -727,7 +727,7 @@ mongoose.connect(
             image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/ed/13/36/birdseye-view-of-daytona.jpg',
             description: `This used to be the hot spot back in the ’60s and ’70s but the crowd has drifted south to greener pastures. Same deal as Sunglow, except there is a chair lift along the length of the pier. Pity it doesn’t drop you out the back when it’s big.
                           If you want to surf Main St in summer and park on the beach, get there early, otherwise it will be expensive meter parking. Beware: focal point of midsummer college revelers.`,
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Beach Break',
             user: users[0]
           },
@@ -741,7 +741,7 @@ mongoose.connect(
             description: `This mile-long jetty blocks any average swell from a southerly direction. Anything with north in it can give some long righthanders and shorter lefts. Wedgy waves are formed from mid incoming through high tide. 
                           Experienced longboarders dominate the peak; younger rippers dominate the scraps, leaving some tasty crumbs for well-behaved visitors.
                           North Jetty is always crowded, and the longstanding local pecking order demands respect. Parking is right on the beach, which can cause problems at high tide. There is a campground directly behind the beach.`,
-            level: 'Beginners',
+            level: 'Beginner',
             typeOfWave: 'Point Break',
             user: users[0]
           },
