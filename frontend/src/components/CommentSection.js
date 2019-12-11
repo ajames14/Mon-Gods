@@ -90,7 +90,7 @@ const Comments = ({ data, updateComments }) => {
             <article className="media" key={i}>
               <figure className="media-left">
                 <p className="image is-64x64">
-                  <img src="https://bulma.io/images/placeholders/128x128.png" />
+                  <img src={!elem.user.userProfilePicture ? 'https://bulma.io/images/placeholders/128x128.png' : elem.user.userProfilePicture} />
                 </p>
               </figure>
               <div className="media-content">

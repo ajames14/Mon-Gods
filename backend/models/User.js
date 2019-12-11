@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({ 
   username: { type: String, required: true, unique: true }, 
   email: { type: String, required: true, unique: true },
+  profilePicture: { type: String },
   password: { type: String, required: true },
   favourites: [] 
 }, {
@@ -12,7 +13,8 @@ const userSchema = new mongoose.Schema({
     transform(doc, json) {
       return { 
         username: json.username,
-        userId: json._id
+        userId: json._id,
+        userProfilePicture: json.profilePicture
       }
     }
   }

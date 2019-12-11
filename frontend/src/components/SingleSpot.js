@@ -12,7 +12,7 @@ const SingleSpot = (props) => {
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
 
-  const [forecastData, setForecastData] = useState([])
+  // const [forecastData, setForecastData] = useState([])
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
