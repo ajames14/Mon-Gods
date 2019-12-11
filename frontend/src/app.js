@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import './styles/styles.scss'
 import 'bulma'
+import './styles/styles.scss'
 
 import Spots from './components/Spots'
 import SingleSpot from './components/SingleSpot'
@@ -15,6 +15,7 @@ import Home from './components/Home'
 import NavBar from './components/NavBar'
 import CountrySpots from './components/Country'
 import SecureRoute from './components/SecureRoute'
+import Profile from './components/Profile'
 
 
 
@@ -30,6 +31,7 @@ const App = () => (
       <Route path='/login' component={Login} />
       <SecureRoute path='/newspot' component={NewSpot} />
       <SecureRoute path='/edit/:id' component={EditSpot} />
+      <Route path='/profile' component={Profile} />
     </Switch>
   </BrowserRouter>
 )

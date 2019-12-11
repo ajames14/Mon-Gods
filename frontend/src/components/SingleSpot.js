@@ -26,7 +26,7 @@ const SingleSpot = (props) => {
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
   }, [rating])
-  // should run twice after first loading the spot
+
 
   function updateComments(resp) {
     const newData = { ...data }

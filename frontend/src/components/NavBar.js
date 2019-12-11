@@ -2,6 +2,9 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import Auth from '../lib/auth'
 
+
+const admin = '5def8f2997e67a10b4a37347'
+
 class Navbar extends React.Component {
 
   constructor() {
@@ -58,6 +61,10 @@ class Navbar extends React.Component {
             </div>
             {Auth.isAuthorized() && <div className="navbar-item" onClick={() => this.handleLogout()}>
               <Link className="navbar-item" to="/">Logout</Link>
+            </div>}
+            {Auth.isAuthorized() && <div className="navbar-item">
+              {/* <Link className="navbar-item" to={`/profile/${123}`}>Profile</Link> */}
+              <Link className="navbar-item" to="/profile">Profile</Link>
             </div>}
           </div>
         </div>

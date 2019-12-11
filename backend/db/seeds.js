@@ -19,7 +19,8 @@ mongoose.connect(
           username: 'admin',
           email: 'admin@admin.com',
           password: 'password',
-          passwordConfirmation: 'password'
+          passwordConfirmation: 'password',
+          favourites: []
         }])
       })
       .then(users => {
