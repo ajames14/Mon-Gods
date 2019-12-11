@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
 import ForecastChart from './ForecastCharts'
+import Comments from './CommentSection'
 
 const SingleSpot = (props) => {
 
@@ -27,32 +28,14 @@ const SingleSpot = (props) => {
   }, [rating])
   // should run twice after first loading the spot
 
+  function updateComments(resp) {
+    const newData = { ...data }
+    newData.comments = resp.data.comments
+    console.log(newData)
+    setData(newData)
+  }
+
   let response = {}
-
-
-  // function getForecast() {
-  //   const lat = 60.936;
-  //   const lng = 5.114;
-  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${lat}&lng=${lng}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`, {
-  //     headers: {
-  //       'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
-  //     }
-  //   })
-  //     .then(resp => resp.json())
-  //     .then(resp => {
-  //       console.log("teklslkalksdjlakjdl",resp)
-  //     })
-  //   // console.log("tezsssashdajhsbd",forecastData)
-  // }
-
-  // function getForecast() {
-  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${data.lat}&lng=${data.long}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`)
-  //     .then(resp => resp.json())
-  //     .then(resp =>
-  //       setForecastData(resp),
-  //     )
-  //   console.log(forecastData)
-  // }
 
   function createRating() {
     setNum([])
@@ -161,8 +144,6 @@ const SingleSpot = (props) => {
   }
 
   function submitRating(num) {
-    // console.log(rating)
-    // console.log('submitted')
     axios.post(`/api/spots/${props.match.params.id}/rate`, { rate: num }, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -240,7 +221,8 @@ const SingleSpot = (props) => {
           </div>
         </section>
       </div>
-      <ForecastChart lat={data.lat} lon={data.long}/>
+      {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
+      <Comments data={data} updateComments={resp => updateComments(resp)}/>
     </section>
   )
 }
