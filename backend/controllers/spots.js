@@ -105,8 +105,10 @@ function addRating(req, res) {
 }
 
 function deleteComment(req, res) {
+  req.body.user = req.currentUser
   Spot
     .findById(req.params.id)
+    .populate('comments.user')
     .then(spot => {
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       const comment = spot.comments.id(req.params.commentId)
