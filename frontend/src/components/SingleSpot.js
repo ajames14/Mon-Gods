@@ -21,7 +21,7 @@ const SingleSpot = (props) => {
         setData(resp),
       )
       .then(createRating())
-      // .then(getForecast())
+    // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
@@ -36,6 +36,30 @@ const SingleSpot = (props) => {
   }
 
   let response = {}
+
+  // function getForecast() {
+  //   const lat = 60.936;
+  //   const lng = 5.114;
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${lat}&lng=${lng}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`, {
+  //     headers: {
+  //       'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
+  //     }
+  //   })
+  //     .then(resp => resp.json())
+  //     .then(resp => {
+  //       console.log("teklslkalksdjlakjdl",resp)
+  //     })
+  //   // console.log("tezsssashdajhsbd",forecastData)
+  // }
+
+  // function getForecast() {
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${data.lat}&lng=${data.long}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`)
+  //     .then(resp => resp.json())
+  //     .then(resp =>
+  //       setForecastData(resp),
+  //     )
+  //   console.log(forecastData)
+  // }
 
   function createRating() {
     setNum([])
@@ -167,6 +191,23 @@ const SingleSpot = (props) => {
     return rating.toFixed(2)
   }
 
+  function addFavourite() {
+    // this is a PUT request as I am adding the spot ID to the user "favourites" array - however this could be made into a PUT request instead
+    axios.post(`/api/spots/${props.match.params.id}/favourite`, {}, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(response => {
+        setError(response.data.message)
+      })
+      .catch((err) => {
+        if (err.response.data.message !== 'Unauthorized') {
+          return setError(err.response.data.message)
+        } else {
+          setError('Unauthorized - please log in')
+          setError(response.data.message)
+        }
+      })
+  }
 
 
   return (
@@ -219,10 +260,11 @@ const SingleSpot = (props) => {
           <div className="imgDiv">
             <img className="ratingImg" id="wave5" src='../images/wave.png' />
           </div>
+          <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
-      <Comments data={data} updateComments={resp => updateComments(resp)}/>
+      <Comments data={data} updateComments={resp => updateComments(resp)} />
     </section>
   )
 }

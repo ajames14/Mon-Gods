@@ -48,13 +48,39 @@ const Comments = ({ data, updateComments }) => {
   }
 
   function formatTimestamp(time) {
+    if (!time) return
     const newString = time.substring(0, time.indexOf('.'))
     const newTime = moment(newString).format('LT LL')
     return newTime
   }
 
-  if (!data.comments) {
-    return <h1>... Loading</h1>
+  if (!data.comments || data.comments.length === 0) {
+    return <article className="media">
+      <figure className="media-left">
+        <p className="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png" />
+        </p>
+      </figure>
+      <div className="media-content">
+        <div className="content">
+          <form className='form' onSubmit={e => handleSubmit(e)}>
+            <div className='field'>
+              <label className='label'>Post a Comment</label>
+              <input
+                onChange={e => handleInput(e)}
+                type="text"
+                className="input"
+                value={comment.text}
+              />
+            </div>
+            {error.errors && error.errors.message === 'Unauthorized' && <small className="help is-danger">
+              {error.errors.message} - Please log in
+            </small>}
+            <button className="button">Post</button>
+          </form>
+        </div>
+      </div>
+    </article>
   }
   return (
     <div>
@@ -115,8 +141,6 @@ const Comments = ({ data, updateComments }) => {
     </div>
 
   )
-
 }
-
 
 export default Comments

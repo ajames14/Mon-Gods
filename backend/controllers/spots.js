@@ -82,6 +82,7 @@ function createComment(req, res) {
     .then(spot => res.status(201).json(spot))
     .catch(err => res.status(404).json({ message: 'Not Found' }))
 }
+
 function addRating(req, res) {
   req.body.user = req.currentUser
   Spot
