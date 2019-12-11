@@ -20,7 +20,7 @@ const SingleSpot = (props) => {
         setData(resp),
       )
       .then(createRating())
-      // .then(getForecast())
+    // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
@@ -187,6 +187,24 @@ const SingleSpot = (props) => {
   }
 
 
+  function addFavourite() {
+    // this is a PUT request as I am adding the spot ID to the user "favourites" array - however this could be made into a PUT request instead
+    axios.post(`/api/spots/${props.match.params.id}/favourite`, {}, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(response => {
+        setError(response.data.message)
+      })
+      .catch((err) => {
+        if (err.response.data.message !== 'Unauthorized') {
+          return setError(err.response.data.message)
+        } else {
+          setError('Unauthorized - please log in')
+          setError(response.data.message)
+        }
+      })
+  }
+
 
   return (
     <section className="section">
@@ -238,9 +256,10 @@ const SingleSpot = (props) => {
           <div className="imgDiv">
             <img className="ratingImg" id="wave5" src='../images/wave.png' />
           </div>
+          <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
       </div>
-      <ForecastChart lat={data.lat} lon={data.long}/>
+      {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
     </section>
   )
 }

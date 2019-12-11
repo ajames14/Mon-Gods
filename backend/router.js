@@ -25,6 +25,13 @@ router.route('/spots/:id')
 router.route('/spots/:id/rate')
   .post(secureRoute, spots.addRating)
 
+router.route('/spots/:id/favourite')
+  .post(secureRoute, users.favourite)
+  .delete(secureRoute, users.deleteFavourite)
+
+router.route('/profile')
+  .get(secureRoute, users.showOne)
+
 router.route('/spots/:id/comments')
   .post(secureRoute, spots.createComment)
 
