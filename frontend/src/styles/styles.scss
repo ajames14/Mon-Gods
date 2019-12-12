@@ -68,6 +68,13 @@ body {
   justify-content: flex-start;
 }
 
+.filters {
+  margin: 0 10px;
+}
+
+#spots-overview {
+  margin: 10px 30px;
+}
 
 /* ---------------------------- */
 /*  Single Spot Page            */
@@ -77,6 +84,18 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1rem;
 }
+
+
+/* ---------------------------- */
+/*  Single Spot Page            */
+/* ---------------------------- */
+
+.card {
+  width: 380px;
+  height: auto;
+  margin: 10px 0px;
+}
+
 
 /* ---------------------------- */
 /*  Rating Styles               */
