@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
 import ForecastChart from './ForecastCharts'
@@ -10,8 +11,9 @@ const SingleSpot = (props) => {
   const [nums, setNum] = useState([])
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
-
+  const [text, setText] = useState('Delete spot')
   const [forecastData, setForecastData] = useState([])
+  const [name, setName] = useState('')
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
@@ -20,6 +22,12 @@ const SingleSpot = (props) => {
         setData(resp),
       )
       .then(createRating())
+      .then(axios.get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then((resp) => {
+          setName(resp.data.username)
+        }))
     // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
@@ -59,6 +67,7 @@ const SingleSpot = (props) => {
     fetch(`/api/spots/${props.match.params.id}`)
       .then(resp => resp.json())
       .then(resp => {
+        // console.log(resp.spot.country)
         response = resp
         setPeople(resp.rating.length)
         return resp.rating.forEach(e => {
@@ -205,6 +214,32 @@ const SingleSpot = (props) => {
       })
   }
 
+  function isOwner(data) {
+    return Auth.getUserId() === data.user
+  }
+
+  function isAdmin() {
+    console.log(name)
+    if (name === 'admin') {
+      return true
+    }
+  }
+
+  function makeSure() {
+    if (text === 'Are you sure') {
+      handleDelete()
+    }
+    setText('Are you sure')
+  }
+
+  function handleDelete() {
+    axios.delete(`/api/spots/${props.match.params.id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => props.history.push('/spots'))
+      .catch(err => console.log(err))
+  }
+
 
   return (
     <section className="section">
@@ -258,6 +293,30 @@ const SingleSpot = (props) => {
           </div>
           <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
+      </div>
+      <div>
+        {isOwner(data) &&
+          <>
+            <p><i>You created this spot</i></p>
+            <br />
+          </>
+        }
+        {isAdmin() &&
+          <>
+            <button className="button is-danger" onClick={
+              () => makeSure()
+            }>
+              {text}
+            </button>
+          </>
+        }
+        {isAdmin() &&
+          <>
+            <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
+              Edit Spot
+            </Link>
+          </>
+        }
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
     </section>

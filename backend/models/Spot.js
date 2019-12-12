@@ -25,7 +25,8 @@ const spotSchema = new mongoose.Schema({
   typeOfWave: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [commentSchema],
-  rating: [ratingSchema]
+  rating: [ratingSchema],
+  authorized: { type: Boolean }
 }, {
   timestamps: true
 })
