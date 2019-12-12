@@ -98,7 +98,7 @@ const Profile = () => {
       if (!spot.authorized) {
         return <div>Request pending approval</div>
       }
-      return <div>This spot has been authorized</div>
+      return <div>This spot has been approved</div>
     }
   }
 
@@ -117,9 +117,6 @@ const Profile = () => {
         setAuth(authArray)
       })
   }
-
-  //5df214f52dc0490af9400429
-  //5df23f261282cd0c7057647a
 
   function checkEmpty() {
     if (favs.length === 0) {
