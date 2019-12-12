@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
 // import ForecastChart from './ForecastCharts'
-// import Comments from './CommentSection'
+import Comments from './CommentSection'
 
 const SingleSpot = (props) => {
 
@@ -196,6 +196,7 @@ const SingleSpot = (props) => {
   }
 
   function checkRating(rating) {
+    console.log('rating', rating)
     if (isNaN(rating)) {
       return 0
     }
@@ -281,6 +282,7 @@ const SingleSpot = (props) => {
           {error}
         </small>}
         <br /> <br />
+        <div className="subtitle"> User rating</div>
         <section className="section columns">
           <div className="imgDiv">
             <img className="ratingImg" id="wave1" src='../images/wave2.png' />
@@ -297,8 +299,8 @@ const SingleSpot = (props) => {
           <div className="imgDiv">
             <img className="ratingImg" id="wave5" src='../images/wave2.png' />
           </div>
-          <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
+        <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
       </div>
       <div>
         {isOwner(data) &&
@@ -325,7 +327,7 @@ const SingleSpot = (props) => {
         }
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
-      {/* <Comments data={data} updateComments={resp => updateComments(resp)} /> */}
+      <Comments data={data} updateComments={resp => updateComments(resp)} />
     </section>
   )
 }
