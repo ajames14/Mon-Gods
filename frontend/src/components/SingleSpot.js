@@ -283,19 +283,19 @@ const SingleSpot = (props) => {
         <br /> <br />
         <section className="section columns">
           <div className="imgDiv">
-            <img className="ratingImg" id="wave1" src='../images/wave.png' />
+            <img className="ratingImg" id="wave1" src='../images/wave2.png' />
           </div>
           <div className="imgDiv">
-            <img className="ratingImg" id="wave2" src='../images/wave.png' />
+            <img className="ratingImg" id="wave2" src='../images/wave2.png' />
           </div>
           <div className="imgDiv">
-            <img className="ratingImg" id="wave3" src='../images/wave.png' />
+            <img className="ratingImg" id="wave3" src='../images/wave2.png' />
           </div>
           <div className="imgDiv">
-            <img className="ratingImg" id="wave4" src='../images/wave.png' />
+            <img className="ratingImg" id="wave4" src='../images/wave2.png' />
           </div>
           <div className="imgDiv">
-            <img className="ratingImg" id="wave5" src='../images/wave.png' />
+            <img className="ratingImg" id="wave5" src='../images/wave2.png' />
           </div>
           <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>

@@ -11,16 +11,7 @@ const Profile = () => {
   const [name, setName] = useState('')
   const [auth, setAuth] = useState([])
   const [spotsMade, setMade] = useState([])
-  const [rating, setRate] = useState(0)
 
-
-  const wave1 = document.querySelector('#wave1')
-  const wave2 = document.querySelector('#wave2')
-  const wave3 = document.querySelector('#wave3')
-  const wave4 = document.querySelector('#wave4')
-  const wave5 = document.querySelector('#wave5')
-
-  const waveList = [wave1, wave2, wave3, wave4, wave5]
 
   useEffect(() => {
     axios.get('/api/profile', {
@@ -118,8 +109,6 @@ const Profile = () => {
       })
   }
 
-  //5df214f52dc0490af9400429
-  //5df23f261282cd0c7057647a
 
   function checkEmpty() {
     if (favs.length === 0) {
