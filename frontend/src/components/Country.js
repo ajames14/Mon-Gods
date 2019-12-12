@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import SpotCard from './SpotCard'
+import LazyHero from 'react-lazy-hero'
 
 const CountrySpots = (props) => {
   const [data, setData] = useState([])
@@ -13,7 +14,7 @@ const CountrySpots = (props) => {
       .then(resp => resp.json())
       .then(resp => {
         setData(resp),
-        getCountry(resp)
+          getCountry(resp)
       })
     return () => console.log('Unmounting component')
   }, [])
@@ -32,77 +33,82 @@ const CountrySpots = (props) => {
   const levelFilter = (e) => {
     e.preventDefault()
     setFilterType(e.target.value)
-    console.log("TESSSSSTTTTYYY", filterType)
-    // this.state.spells.map(e => { })
   }
 
   const ratingFilter = (e) => {
     e.preventDefault()
     setfilterRating(e.target.value)
-    console.log("TESSSSSTTTTYYY", filterType)
-    // this.state.spells.map(e => { })
   }
 
   return (
-    <section className="section">
-      <div className="title" id="country-title">{props.match.params.country}</div>
-      <form className="form" >
-        {/* <form className="form" onClick={(e) => this.handleFilter(e)}> */}
-        <select onChange={(e) => levelFilter(e)}>
-          <option value="All">All</option>
-          <option value="Beginner">Beginner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-          <option value="All levels">All levels</option>
-        </select>
-        <select onChange={(e) => ratingFilter(e)}>
-          <option value="All">All</option>
-          <option value="1">⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-        </select>
-        <input
-          className="input"
-          type="text"
-          id='search-input'
-          placeholder='Search...'
-          name='query'
-          onChange={formFilter.bind(this)}
-        />
-      </form>
-      <div className="container">
-        <div className="columns is-mobile is-multiline">
-          {countries
-            .filter(elem => {
-              if (filterType === "All") {
-                return elem
-              } else return elem.level === filterType
-            })
-            // .filter(elem => {
-            //   if (filterRating === "All") {                            ===============>  THIS IS TO FILTER OUT THE RATING
-            //     return elem
-            //   } else  {
-            //     let average = (elem.rating.reduce((previous, current) => current += previous)/elem.rating.length)
-            //     if(average <= filterRating && average > filterRating -1) {
-            //       return elem
-            //     }
-            //   } 
-            // })
-            .filter(elem => {
-              // if(this.state.filterType){
-              // return elem.type === this.state.filterType
-              return elem.spotName.toLowerCase().includes(filter.toLowerCase()) 
-              // || elem.region.toLowerCase().includes(filter.toLowerCase())      =>>>>>>>>> allows for form to also filter field also include spot's region
-            })
-            .map((spot, id) => {
-              return <SpotCard key={id} spot={spot} />                 //   =>>>>>>>>> ADD message for no results found
-            })}
+    <div>
+      <LazyHero imageSrc="https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" minHeight='40vh' parallaxOffset={100} overflow='hidden' opacity={0} transitionDuration={0} id='country-image'>
+        <div>
+          <div className="title" id="country-title">{props.match.params.country}</div>
         </div>
-      </div>
+      </LazyHero>
+      <section className="section">
+        <form className="form" >
+          {/* <form className="form" onClick={(e) => this.handleFilter(e)}> */}
+          <div id='dropdowns'>
+            <div className="field">
+              <div className="control">
+                <label className="label">Select your level:</label>
+                <div className="select is-small">
+                  <select onChange={(e) => levelFilter(e)}>
+                    <option value="All">All</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="All levels">All levels</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="field">
+              <div className="control">
+                <label className="label">User Rating:</label>
+                <div className="select is-small">
+                  <select onChange={(e) => ratingFilter(e)}>
+                    <option value="All">All</option>
+                    <option value="1">⭐️</option>
+                    <option value="2">⭐️⭐️</option>
+                    <option value="3">⭐️⭐️⭐️</option>
+                    <option value="4">⭐️⭐️⭐️⭐️</option>
+                    <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input
+            className="input"
+            type="text"
+            id='search-input'
+            placeholder='Search...'
+            name='query'
+            onChange={formFilter.bind(this)}
+          />
+        </form>
+        <div className="container">
+          <div className="columns is-mobile is-multiline">
+            {countries
+              .filter(elem => {
+                if (filterType === "All") {
+                  return elem
+                } else return elem.level === filterType
+              })
+              .filter(elem => {
+                return elem.spotName.toLowerCase().includes(filter.toLowerCase())
+              })
+              .map((spot, id) => {
+                return <SpotCard key={id} spot={spot} />                 //   =>>>>>>>>> ADD message for no results found
+              })}
+          </div>
+        </div>
 
-    </section>
+      </section>
+    </div>
   )
 
 

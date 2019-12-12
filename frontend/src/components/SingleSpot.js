@@ -325,7 +325,7 @@ const SingleSpot = (props) => {
         }
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
-      {/* <Comments data={data} updateComments={resp => updateComments(resp)} /> */}
+      <Comments data={data} updateComments={resp => updateComments(resp)} />
     </section>
   )
 }

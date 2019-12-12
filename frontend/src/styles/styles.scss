@@ -25,7 +25,6 @@ body {
   color: white;
   height: 100vh;
   background-position: center;
-  background-image: url('https://i.pinimg.com/originals/18/92/17/18921735a859b696c412f59c8ce5e220.jpg');
   background-size: cover;
   position: relative;
   #titles {
@@ -60,7 +59,15 @@ body {
 
 #country-title {
   text-transform: capitalize;
+  font-size: 3rem;
+  color: white;
 }
+
+#dropdowns {
+  display: flex;
+  justify-content: flex-start;
+}
+
 
 /* ---------------------------- */
 /*  Single Spot Page            */

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SpotCard = ({ spot }) => (
-  <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+  <div className="column is-one-third-desktop is-one-third-tablet is-half-mobile">
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
