@@ -195,7 +195,7 @@ const SingleSpot = (props) => {
     }
   }
 
-  function checkRating() {
+  function checkRating(rating) {
     if (isNaN(rating)) {
       return 0
     }

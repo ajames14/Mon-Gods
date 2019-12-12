@@ -46,7 +46,6 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  req.body.user = req.currentUser //added
   Spot
     .findById(req.params.id)
     .then(spot => {

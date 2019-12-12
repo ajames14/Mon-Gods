@@ -10,6 +10,17 @@ const Profile = () => {
   const [spots, setSpots] = useState([])
   const [name, setName] = useState('')
   const [auth, setAuth] = useState([])
+  const [spotsMade, setMade] = useState([])
+  const [rating, setRate] = useState(0)
+
+
+  const wave1 = document.querySelector('#wave1')
+  const wave2 = document.querySelector('#wave2')
+  const wave3 = document.querySelector('#wave3')
+  const wave4 = document.querySelector('#wave4')
+  const wave5 = document.querySelector('#wave5')
+
+  const waveList = [wave1, wave2, wave3, wave4, wave5]
 
   useEffect(() => {
     axios.get('/api/profile', {
@@ -24,12 +35,17 @@ const Profile = () => {
         .then(resp => {
           setSpots(resp)
           const authArray = [...auth]
+          const madeArray = [...spotsMade]
           resp.forEach((e) => {
             if (e.authorized === false) {
               authArray.push(e._id)
             }
+            if (e.user.userId === Auth.getUserId()) {
+              madeArray.push(e)
+            }
           })
           setAuth(authArray)
+          setMade(madeArray)
         }))
     return () => console.log('Unmounting component')
   }, [])
@@ -41,8 +57,20 @@ const Profile = () => {
     })
       .then(resp => setFavs(resp.data.favourites))
   }
+  function checkRating(rating) {
+    const rate2 = []
+    rating[0].forEach((e) => {
+      rate2.push(e.rate)
+    })
+    const parsed = (parseInt(rate2) / rate2.length)
+    if (!parsed) {
+      return 'no rating yet'
+    }
+    return parsed.toFixed(0)
+  }
 
-  const SpotCard = (spot, id, spotId, boolean) => (
+
+  const SpotCard = (spot, id, spotId, boolean, made) => (
     <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
       <div className="card">
         <div className="card-image">
@@ -53,17 +81,24 @@ const Profile = () => {
         <div className="card-content">
           <Link className="subtitle" to={`/spots/${spot._id}`}>{spot.spotName}</Link>
           <p className="has-text-grey-darker">{spot.country}</p>
+          <div>Rating: {checkRating([spot.rating])}
+          </div>
         </div>
-        {buttonShow(boolean, spotId)}
+        {buttonShow(boolean, spotId, made, spot)}
       </div>
     </div>
   )
 
-  function buttonShow(boolean, spotId) {
-    if (boolean === false) {
-      return <button className="button is-success" onClick={() => authorize(spotId)}>X</button>
-    } else {
+  function buttonShow(boolean, spotId, made, spot) {
+    if (!boolean && made) {
+      return <button className="button is-success" onClick={() => authorize(spotId)}>Authorize</button>
+    } else if (made) {
       return <button className="button is-danger" onClick={() => deleteFavourite(spotId)}>X</button>
+    } else {
+      if (!spot.authorized) {
+        return <div>Request pending approval</div>
+      }
+      return <div>This spot has been authorized</div>
     }
   }
 
@@ -83,6 +118,9 @@ const Profile = () => {
       })
   }
 
+  //5df214f52dc0490af9400429
+  //5df23f261282cd0c7057647a
+
   function checkEmpty() {
     if (favs.length === 0) {
       return <div className="subtitle grey">Go add some favourite places!</div>
@@ -95,28 +133,35 @@ const Profile = () => {
     }
   }
 
-
   return (
     <div className="container">
       <div className="title username">{name}</div>
       <div className="title favTitle"> Your Favourite Places: </div>
-      <div className="columns is-mobile is-multiline" >
+      <div className="columns is-mobile is-multiline">
         {spots.map((spot, id) => {
           if (favs.includes(spot._id)) {
-            return SpotCard(spot, id, spot._id)
+            return SpotCard(spot, id, spot._id, true, true)
           }
         })}
         {checkEmpty()}
       </div>
       <div className="title">{isAdmin()}</div>
-      <div>
+      <div className="columns is-mobile is-multiline">
         {spots.map((spot, id, ) => {
           if (name === 'admin' && auth.includes(spot._id)) {
-            return SpotCard(spot, id, spot._id, false)
+            return SpotCard(spot, id, spot._id, false, true)
           }
         })}
       </div>
+      <div className="title">Spots you have created</div>
+      <div className="columns is-mobile is-multiline">
+        {spotsMade.map((spot, id, ) => {
+          console.log(spot.spotName)
+          return SpotCard(spot, id, spot._id, false, false)
+        })}
+      </div>
     </div>
+
   )
 
 }
