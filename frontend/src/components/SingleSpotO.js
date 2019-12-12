@@ -3,6 +3,7 @@ import axios from 'axios'
 import Auth from '../lib/auth'
 import ForecastChart from './ForecastCharts'
 import MiniSurfMap from './MiniSurfMap'
+import SurfMap from './SurfMap'
 
 const SingleSpot = (props) => {
 
@@ -14,17 +15,19 @@ const SingleSpot = (props) => {
 
   const [forecastData, setForecastData] = useState([])
 
+  const newviewport = { width: 100, height: 100, latitude: data.lat, longitude: data.long, zoom: 15 }
+  const [viewport, setviewport] = useState(newviewport)
+
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
       .then(resp => resp.json())
       .then(resp =>
         setData(resp)
-
         //run function to pass data down to child component
         // gop to child run the function 
       )
       .then(createRating())
-    // .then(getForecast())
+      // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
@@ -32,6 +35,31 @@ const SingleSpot = (props) => {
   // should run twice after first loading the spot
 
   let response = {}
+
+
+  // function getForecast() {
+  //   const lat = 60.936;
+  //   const lng = 5.114;
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${lat}&lng=${lng}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`, {
+  //     headers: {
+  //       'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
+  //     }
+  //   })
+  //     .then(resp => resp.json())
+  //     .then(resp => {
+  //       console.log("teklslkalksdjlakjdl",resp)
+  //     })
+  //   // console.log("tezsssashdajhsbd",forecastData)
+  // }
+
+  // function getForecast() {
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${data.lat}&lng=${data.long}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`)
+  //     .then(resp => resp.json())
+  //     .then(resp =>
+  //       setForecastData(resp),
+  //     )
+  //   console.log(forecastData)
+  // }
 
   function createRating() {
     setNum([])
@@ -219,9 +247,9 @@ const SingleSpot = (props) => {
           </div>
         </section>
       </div>
-      {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
-      {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />}
-      {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
+      <ForecastChart lat={data.lat} lon={data.long}/>
+      <SurfMap viewport={newviewport}/>
+      {/* <MiniSurfMap  lat={data.lat} lon={data.long}/> */}
     </section>
   )
 }

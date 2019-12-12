@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
 import SpotForm from './SpotForm'
+import SurfMap from './SurfMap'
 
 const spotInitialState = {
   spotName: '',
@@ -52,6 +53,7 @@ const NewSpot = (props) => {
           form={form}
         />
       </div>
+      <SurfMap />
     </section>
 
 
