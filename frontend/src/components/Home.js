@@ -2,8 +2,7 @@ import React from 'react'
 import LazyHero from 'react-lazy-hero'
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import CountrySearch from './CountrySearch'
-
-
+import SurfMap from './SurfMap'
 
 const Home = () => (
   <React.Fragment>
@@ -21,10 +20,12 @@ const Home = () => (
       </section>
       <section className='hero is-fullheight'>
         <div className='hero-body'>
-          <div className='container'>
-            <CountrySearch />
+          <div className="section">
+            <CountrySearch className="column" />
+            <SurfMap className="column" />
           </div>
         </div>
+        <img src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"/>
       </section>
     </div>
   </React.Fragment>
