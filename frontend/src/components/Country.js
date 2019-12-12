@@ -14,11 +14,13 @@ const CountrySpots = (props) => {
       .then(resp => resp.json())
       .then(resp => {
         setData(resp),
-          getCountry(resp)
+        getCountry(resp)
+
       })
     return () => console.log('Unmounting component')
   }, [])
 
+  console.log('TESSSSTTTTTTYYYYYYYYYY', data)
 
   function getCountry(data) {
     const currentCountry = props.match.params.country
@@ -96,17 +98,42 @@ const CountrySpots = (props) => {
               .filter(elem => {
                 if (filterType === "All") {
                   return elem
-                } else return elem.level === filterType
+                } else return elem.level === filterType || elem.level === 'All levels'  // ===========> some spots are suitible for all levels
               })
+
               .filter(elem => {
+                let average
+                if (filterRating === "All") {                            // ===============>  THIS IS TO FILTER OUT THE RATING
+                  return elem
+                } else {
+                  if (elem.rating.length === 0) {
+                    average = 0
+                  } else {
+                    average = (elem.rating.reduce((previous, current) => previous.rate + current.rate)) / elem.rating.length
+                    console.log('average1111', average)
+                  }
+                  console.log('aveage222222', average)
+                  // let average = (elem.rating.rate.reduce((previous, current) => current += previous)/elem.rating.rate.length)
+                  if (average > Number(filterRating) && average <= Number(filterRating) + 1) {
+                    // console.log('filterrrrrrrr RAAAATINGGGGGG', filterRating)
+                    // console.log('++++++1', Number(filterRating) + 1)
+                    // console.log('1-------', Number(filterRating) - 1)
+                    return elem
+                  }
+                }
+              })
+
+              .filter(elem => {
+                // if(this.state.filterType){
+                // return elem.type === this.state.filterType
                 return elem.spotName.toLowerCase().includes(filter.toLowerCase())
+                // || elem.region.toLowerCase().includes(filter.toLowerCase())      =>>>>>>>>> allows for form to also filter field also include spot's region
               })
               .map((spot, id) => {
                 return <SpotCard key={id} spot={spot} />                 //   =>>>>>>>>> ADD message for no results found
               })}
           </div>
         </div>
-
       </section>
     </div>
   )

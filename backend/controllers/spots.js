@@ -9,7 +9,7 @@ function create(req, res) {
   Spot.create(req.body)
     .then(spot => res.status(201).json(spot))
     .catch(err => {
-      res.status(422).json({ 
+      res.status(422).json({
         spotName: 'Spot already exists',
         lat: 'Please provide latitude (e.g. -32.315573)',
         long: 'Please provide longitude (e.g. 18.335906)',
@@ -88,15 +88,20 @@ function addRating(req, res) {
     .findById(req.params.id)
     .populate('rating.user') //check
     .then(spot => {
+      let ratedYes = false
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       if (req.body.rate < 1 || req.body.rate > 5) return res.status(404).json({ message: 'Invalid rating' })
       spot.rating.forEach(e => {
         if (req.currentUser._id.toString() === e.user._id.toString()) {
           console.log('matched user')
+          ratedYes = true
+          spot.save()
           return res.status(401).json({ message: 'You have already rated this spot' })
         }
       })
-      spot.rating.push(req.body)
+      if (!ratedYes) {
+        spot.rating.push(req.body)
+      }
       return spot.save()
     })
     .then(spot => res.status(201).json(spot))

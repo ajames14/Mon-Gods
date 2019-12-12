@@ -23,6 +23,7 @@ const Profile = () => {
   const [auth, setAuth] = useState([])
   const [spotsMade, setMade] = useState([])
 
+
   useEffect(() => {
     axios.get('/api/profile', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
@@ -136,6 +137,7 @@ const Profile = () => {
         setAuth(authArray)
       })
   }
+
 
   function checkEmpty() {
     if (favs.length === 0) {
