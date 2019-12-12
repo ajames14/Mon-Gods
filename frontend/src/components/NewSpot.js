@@ -35,7 +35,9 @@ const NewSpot = (props) => {
   function handleSubmit(e) {
     e.preventDefault()
     if (!form) return
-    axios.post('/api/spots', form, {
+    const newForm = { ...form, authorized: false }
+    console.log(newForm)
+    axios.post('/api/spots', newForm, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => props.history.push(`/spots/${resp.data._id}`))

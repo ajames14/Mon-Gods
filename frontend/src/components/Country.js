@@ -13,8 +13,12 @@ const CountrySpots = (props) => {
       .then(resp => resp.json())
       .then(resp => {
         setData(resp),
+<<<<<<< HEAD
           getCountry(resp)
 
+=======
+        getCountry(resp)
+>>>>>>> development
       })
     return () => console.log('Unmounting component')
   }, [])

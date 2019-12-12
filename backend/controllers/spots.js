@@ -5,8 +5,6 @@ const Spot = require('../models/Spot')
 const getUsers = express()
 
 function create(req, res) {
-
-  
   req.body.user = req.currentUser
   Spot.create(req.body)
     .then(spot => res.status(201).json(spot))
@@ -35,8 +33,10 @@ function index(req, res) {
 }
 
 function show(req, res) {
+  req.body.user = req.currentUser
   Spot
     .findById(req.params.id)
+    .populate('comments.user')
     .then(spot => {
       // console.log('My spots is', spot)
       if (!spot) res.status(404).json({ message: '404 Not found' })
@@ -50,7 +50,7 @@ function update(req, res) {
     .findById(req.params.id)
     .then(spot => {
       if (!spot) return res.status(404).json({ message: '404 Not found' })
-      if (!req.currentUser._id.equals(spot.user)) return res.status(401).json({ message: 'Unauthorized' })
+      // if (!req.currentUser._id.equals(spot.user)) return res.status(401).json({ message: 'Unauthorized' })
       return spot.set(req.body)
     })
     .then(spot => spot.save())
@@ -74,13 +74,14 @@ function createComment(req, res) {
     .findById(req.params.id)
     .populate('comments.user')
     .then(spot => {
-      if (!spot) return res.status(404).json({ message: 'Not Found' })
+      if (!spot) return res.status(200).json({ message: 'First error' })
       spot.comments.push(req.body)
       return spot.save()
     })
     .then(spot => res.status(201).json(spot))
     .catch(err => res.status(404).json({ message: 'Not Found' }))
 }
+
 function addRating(req, res) {
   req.body.user = req.currentUser
   Spot
@@ -103,8 +104,10 @@ function addRating(req, res) {
 }
 
 function deleteComment(req, res) {
+  req.body.user = req.currentUser
   Spot
     .findById(req.params.id)
+    .populate('comments.user')
     .then(spot => {
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       const comment = spot.comments.id(req.params.commentId)

@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
+<<<<<<< HEAD
 import ForecastChart from './ForecastCharts'
 import MiniSurfMap from './MiniSurfMap'
+=======
+// import ForecastChart from './ForecastCharts'
+// import Comments from './CommentSection'
+>>>>>>> development
 
 const SingleSpot = (props) => {
 
@@ -11,8 +17,11 @@ const SingleSpot = (props) => {
   const [nums, setNum] = useState([])
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
+  const [text, setText] = useState('Delete spot')
+  // const [forecastData, setForecastData] = useState([])
+  const [name, setName] = useState('')
 
-  const [forecastData, setForecastData] = useState([])
+  // const [forecastData, setForecastData] = useState([])
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
@@ -24,20 +33,64 @@ const SingleSpot = (props) => {
         // gop to child run the function 
       )
       .then(createRating())
+<<<<<<< HEAD
+=======
+      .then(axios.get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then((resp) => {
+          setName(resp.data.username)
+        }))
+>>>>>>> development
     // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
   }, [rating])
-  // should run twice after first loading the spot
+
+
+<<<<<<< HEAD
+=======
+  function updateComments(resp) {
+    const newData = { ...data }
+    newData.comments = resp.data.comments
+    console.log(newData)
+    setData(newData)
+  }
 
   let response = {}
 
+  // function getForecast() {
+  //   const lat = 60.936;
+  //   const lng = 5.114;
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${lat}&lng=${lng}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`, {
+  //     headers: {
+  //       'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
+  //     }
+  //   })
+  //     .then(resp => resp.json())
+  //     .then(resp => {
+  //       console.log("teklslkalksdjlakjdl",resp)
+  //     })
+  //   // console.log("tezsssashdajhsbd",forecastData)
+  // }
+
+  // function getForecast() {
+  //   fetch(`https://api.stormglass.io/v1/weather/point?lat=${data.lat}&lng=${data.long}&params=waveHeight,waveDirection,swellDirection,waterTemperature,windSpeed,windDirection,swellPeriod`)
+  //     .then(resp => resp.json())
+  //     .then(resp =>
+  //       setForecastData(resp),
+  //     )
+  //   console.log(forecastData)
+  // }
+
+>>>>>>> development
   function createRating() {
     setNum([])
     fetch(`/api/spots/${props.match.params.id}`)
       .then(resp => resp.json())
       .then(resp => {
+        // console.log(resp.spot.country)
         response = resp
         setPeople(resp.rating.length)
         return resp.rating.forEach(e => {
@@ -140,8 +193,6 @@ const SingleSpot = (props) => {
   }
 
   function submitRating(num) {
-    // console.log(rating)
-    // console.log('submitted')
     axios.post(`/api/spots/${props.match.params.id}/rate`, { rate: num }, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -158,13 +209,56 @@ const SingleSpot = (props) => {
     }
   }
 
-  function checkRating() {
+  function checkRating(rating) {
     if (isNaN(rating)) {
       return 0
     }
     return rating.toFixed(2)
   }
 
+  function addFavourite() {
+    // this is a PUT request as I am adding the spot ID to the user "favourites" array - however this could be made into a PUT request instead
+    axios.post(`/api/spots/${props.match.params.id}/favourite`, {}, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(response => {
+        setError(response.data.message)
+      })
+      .catch((err) => {
+        if (err.response.data.message !== 'Unauthorized') {
+          return setError(err.response.data.message)
+        } else {
+          setError('Unauthorized - please log in')
+          setError(response.data.message)
+        }
+      })
+  }
+
+  function isOwner(data) {
+    return Auth.getUserId() === data.user
+  }
+
+  function isAdmin() {
+    console.log(name)
+    if (name === 'admin') {
+      return true
+    }
+  }
+
+  function makeSure() {
+    if (text === 'Are you sure') {
+      handleDelete()
+    }
+    setText('Are you sure')
+  }
+
+  function handleDelete() {
+    axios.delete(`/api/spots/${props.match.params.id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => props.history.push('/spots'))
+      .catch(err => console.log(err))
+  }
 
 
   return (
@@ -217,11 +311,41 @@ const SingleSpot = (props) => {
           <div className="imgDiv">
             <img className="ratingImg" id="wave5" src='../images/wave.png' />
           </div>
+          <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
       </div>
+<<<<<<< HEAD
       {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
       {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />}
       {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
+=======
+      <div>
+        {isOwner(data) &&
+          <>
+            <p><i>You created this spot</i></p>
+            <br />
+          </>
+        }
+        {isAdmin() &&
+          <>
+            <button className="button is-danger" onClick={
+              () => makeSure()
+            }>
+              {text}
+            </button>
+          </>
+        }
+        {isAdmin() &&
+          <>
+            <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
+              Edit Spot
+            </Link>
+          </>
+        }
+      </div>
+      {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
+      {/* <Comments data={data} updateComments={resp => updateComments(resp)} /> */}
+>>>>>>> development
     </section>
   )
 }

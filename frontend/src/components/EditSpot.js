@@ -33,14 +33,16 @@ const EditSpot = (props) => {
   function handleInput(e) {
     updateForm({ ...form, [e.target.name]: e.target.value })
     setError({ ...error, errors: '' })
+    console.log(form)
   }
 
   function handleSubmit(e) {
     e.preventDefault()
-    axios.post('api/spots', form, {
+    console.log(`/api/spots/${props.match.params.id}`)
+    axios.put(`/api/spots/${props.match.params.id}`, form, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(resp => history.push(`spots/${resp.data.id}`))
+      .then(resp => props.history.push(`/spots/${props.match.params.id}`))
       .catch((err) => setError({ errors: err.response.data }))
   }
 
@@ -48,7 +50,7 @@ const EditSpot = (props) => {
     <section className='section'>
       <div className='container'>
         <div className='title'>Edit Surf Spot</div>
-        <SpotForm 
+        <SpotForm
           handleSubmit={e => handleSubmit(e)}
           handleInput={e => handleInput(e)}
           error={error}

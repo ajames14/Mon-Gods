@@ -18,7 +18,9 @@ const Spots = () => {
       <div className="container">
         <div className="columns is-mobile is-multiline">
           {data.map((spot, id) => {
-            return <SpotCard key={id} spot={spot} />
+            if (spot.authorized !== false) {
+              return <SpotCard key={id} spot={spot} />
+            }
           })}
         </div>
       </div>

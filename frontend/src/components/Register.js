@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+
 const formInitialState = {
   username: '',
   email: '',
+  profilePicture: '',
   password: '',
   passwordConfirmation: ''
 }
@@ -72,6 +74,19 @@ const Register = (props) => {
             {error.errors.email && !form.email && <small className="help is-danger">
               {error.errors.email}
             </small>}
+          </div>
+          <div className="field">
+            <label htmlFor="" className="label">
+              Upload Profile Picture
+            </label>
+            <div className="control">
+              <input
+                onChange={e => handleInput(e)}
+                type='text'
+                name='profilePicture'
+                className='input'
+              />
+            </div>
           </div>
           <div className="field">
             <label htmlFor="" className="label">

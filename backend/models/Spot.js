@@ -4,8 +4,9 @@ const uniqueValidator = require('mongoose-unique-validator')
 
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  likes: { type: Number } //============ADDED
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
 })
 
 const ratingSchema = new mongoose.Schema({
@@ -25,7 +26,8 @@ const spotSchema = new mongoose.Schema({
   typeOfWave: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [commentSchema],
-  rating: [ratingSchema]
+  rating: [ratingSchema],
+  authorized: { type: Boolean }
 }, {
   timestamps: true
 })

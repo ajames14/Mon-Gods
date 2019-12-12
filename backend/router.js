@@ -22,8 +22,17 @@ router.route('/spots/:id')
   .put(secureRoute, spots.update)
   .delete(secureRoute, spots.remove)
 
+
 router.route('/spots/:id/rate')
   .post(secureRoute, spots.addRating)
+
+router.route('/spots/:id/favourite')
+  .post(secureRoute, users.favourite)
+  .delete(secureRoute, users.deleteFavourite)
+
+router.route('/profile')
+  .get(secureRoute, users.showOne)
+  .put(secureRoute, users.update)
 
 router.route('/spots/:id/comments')
   .post(secureRoute, spots.createComment)
@@ -33,6 +42,7 @@ router.route('/spots/:id/comments/:commentId')
 
 router.route('/register')
   .post(users.register)
+  
 
   //CHANGEEEEED
 // router.route('/lat')
