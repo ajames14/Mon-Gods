@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
-import ForecastChart from './ForecastCharts'
+// import ForecastChart from './ForecastCharts'
+// import Comments from './CommentSection'
 
 const SingleSpot = (props) => {
 
@@ -12,8 +13,10 @@ const SingleSpot = (props) => {
   const [people, setPeople] = useState(0)
   const [error, setError] = useState('')
   const [text, setText] = useState('Delete spot')
-  const [forecastData, setForecastData] = useState([])
+  // const [forecastData, setForecastData] = useState([])
   const [name, setName] = useState('')
+
+  // const [forecastData, setForecastData] = useState([])
 
   useEffect(() => {
     fetch(`/api/spots/${props.match.params.id}`)
@@ -33,10 +36,16 @@ const SingleSpot = (props) => {
     // console.log('lat', lat)
     return () => console.log('Unmounting component')
   }, [rating])
-  // should run twice after first loading the spot
+
+
+  function updateComments(resp) {
+    const newData = { ...data }
+    newData.comments = resp.data.comments
+    console.log(newData)
+    setData(newData)
+  }
 
   let response = {}
-
 
   // function getForecast() {
   //   const lat = 60.936;
@@ -132,7 +141,7 @@ const SingleSpot = (props) => {
         waveList[waveList.length - w].style.width = (parseInt(rating.toString()[3]) + 10) / 20 * 100 + '%'
       }
       //newRating.toString()[2] !== undefined || 
-    } else if (newRating.toString()[2] !== '0') {
+    } else if (newRating.toString()[2] !== 0) {
       console.log(2)
       if (newRating === '0.20' || newRating === '0.40' || newRating === '0.60' || newRating === '0.80') {
         waveList[waveList.length - w].style.width = '100%'
@@ -170,8 +179,6 @@ const SingleSpot = (props) => {
   }
 
   function submitRating(num) {
-    // console.log(rating)
-    // console.log('submitted')
     axios.post(`/api/spots/${props.match.params.id}/rate`, { rate: num }, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -194,7 +201,6 @@ const SingleSpot = (props) => {
     }
     return rating.toFixed(2)
   }
-
 
   function addFavourite() {
     // this is a PUT request as I am adding the spot ID to the user "favourites" array - however this could be made into a PUT request instead
@@ -319,6 +325,7 @@ const SingleSpot = (props) => {
         }
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
+      {/* <Comments data={data} updateComments={resp => updateComments(resp)} /> */}
     </section>
   )
 }

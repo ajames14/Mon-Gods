@@ -75,6 +75,19 @@ const Register = (props) => {
           </div>
           <div className="field">
             <label htmlFor="" className="label">
+              Upload Profile Picture
+            </label>
+            <div className="control">
+              <input
+                onChange={e => handleInput(e)}
+                type='text'
+                name='profilePicture'
+                className='input'
+              />
+            </div>
+          </div>
+          <div className="field">
+            <label htmlFor="" className="label">
               Password
             </label>
             <div className="control">

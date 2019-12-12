@@ -33,8 +33,10 @@ function index(req, res) {
 }
 
 function show(req, res) {
+  req.body.user = req.currentUser
   Spot
     .findById(req.params.id)
+    .populate('comments.user')
     .then(spot => {
       // console.log('My spots is', spot)
       if (!spot) res.status(404).json({ message: '404 Not found' })
@@ -73,13 +75,14 @@ function createComment(req, res) {
     .findById(req.params.id)
     .populate('comments.user')
     .then(spot => {
-      if (!spot) return res.status(404).json({ message: 'Not Found' })
+      if (!spot) return res.status(200).json({ message: 'First error' })
       spot.comments.push(req.body)
       return spot.save()
     })
     .then(spot => res.status(201).json(spot))
     .catch(err => res.status(404).json({ message: 'Not Found' }))
 }
+
 function addRating(req, res) {
   req.body.user = req.currentUser
   Spot
@@ -102,8 +105,10 @@ function addRating(req, res) {
 }
 
 function deleteComment(req, res) {
+  req.body.user = req.currentUser
   Spot
     .findById(req.params.id)
+    .populate('comments.user')
     .then(spot => {
       if (!spot) return res.status(404).json({ message: 'Not Found' })
       const comment = spot.comments.id(req.params.commentId)
