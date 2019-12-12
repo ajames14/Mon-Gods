@@ -129,12 +129,11 @@ const SpotForm = ({ form, handleInput, handleSubmit, error }) => (
         <select
           onChange={e => handleInput(e)}
           type="text"
-          value="level"
           name="level">
-          <option></option>
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
+          <option value="level"></option>
+          <option value="level">Beginner</option>
+          <option value="level">Intermediate</option>
+          <option value="level">Advanced</option>
         </select>
       </div>
       {error.errors.level && !form.level && <small className="help is-danger">

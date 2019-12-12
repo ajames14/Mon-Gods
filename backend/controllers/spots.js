@@ -46,12 +46,11 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  req.body.user = req.currentUser //added
   Spot
     .findById(req.params.id)
     .then(spot => {
       if (!spot) return res.status(404).json({ message: '404 Not found' })
-      if (!req.currentUser._id.equals(spot.user)) return res.status(401).json({ message: 'Unauthorized' })
+      // if (!req.currentUser._id.equals(spot.user)) return res.status(401).json({ message: 'Unauthorized' })
       return spot.set(req.body)
     })
     .then(spot => spot.save())
