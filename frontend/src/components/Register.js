@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+
 const formInitialState = {
   username: '',
   email: '',
+  profilePicture: '',
   password: '',
   passwordConfirmation: ''
 }
