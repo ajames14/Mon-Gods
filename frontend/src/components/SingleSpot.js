@@ -2,13 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
-<<<<<<< HEAD
 import ForecastChart from './ForecastCharts'
 import MiniSurfMap from './MiniSurfMap'
-=======
-// import ForecastChart from './ForecastCharts'
-// import Comments from './CommentSection'
->>>>>>> development
+import Comments from './CommentSection'
 
 const SingleSpot = (props) => {
 
@@ -33,15 +29,12 @@ const SingleSpot = (props) => {
         // gop to child run the function 
       )
       .then(createRating())
-<<<<<<< HEAD
-=======
       .then(axios.get('/api/profile', {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
         .then((resp) => {
           setName(resp.data.username)
         }))
->>>>>>> development
     // .then(getForecast())
     // console.log('TESSSSSSSTYYYYYYYYYY', data.long)
     // console.log('lat', lat)
@@ -49,8 +42,7 @@ const SingleSpot = (props) => {
   }, [rating])
 
 
-<<<<<<< HEAD
-=======
+
   function updateComments(resp) {
     const newData = { ...data }
     newData.comments = resp.data.comments
@@ -84,7 +76,6 @@ const SingleSpot = (props) => {
   //   console.log(forecastData)
   // }
 
->>>>>>> development
   function createRating() {
     setNum([])
     fetch(`/api/spots/${props.match.params.id}`)
@@ -314,11 +305,9 @@ const SingleSpot = (props) => {
           <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
         </section>
       </div>
-<<<<<<< HEAD
       {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
       {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />}
       {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
-=======
       <div>
         {isOwner(data) &&
           <>
@@ -345,7 +334,6 @@ const SingleSpot = (props) => {
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
       {/* <Comments data={data} updateComments={resp => updateComments(resp)} /> */}
->>>>>>> development
     </section>
   )
 }
