@@ -3,12 +3,23 @@ import axios from 'axios'
 import Auth from '../lib/auth'
 import { Link } from 'react-router-dom'
 
+const pictureInitialState = {
+  profilePicture: ''
+}
+
+const errorInitialState = {
+  errors: ''
+}
 
 const Profile = () => {
 
   const [favs, setFavs] = useState([])
   const [spots, setSpots] = useState([])
   const [name, setName] = useState('')
+  const [initialPic, changingPic] = useState(pictureInitialState)
+  const [picture, updatePicture] = useState(pictureInitialState)
+  const [error, setError] = useState(errorInitialState)
+
   const [auth, setAuth] = useState([])
   const [spotsMade, setMade] = useState([])
 
@@ -20,6 +31,7 @@ const Profile = () => {
       .then((resp) => {
         setFavs(resp.data.favourites)
         setName(resp.data.username)
+        updatePicture(!resp.data.profilePicture ? 'https://www.driverhire.co.uk/wp-content/themes/driver-hire/img/placeholder-person.jpeg' : resp.data.profilePicture)
       })
       .then(fetch('/api/spots')
         .then(resp => resp.json())
@@ -48,6 +60,7 @@ const Profile = () => {
     })
       .then(resp => setFavs(resp.data.favourites))
   }
+
   function checkRating(rating) {
     const rate2 = []
     rating[0].forEach((e) => {
@@ -80,6 +93,22 @@ const Profile = () => {
     </div>
   )
 
+  function handleInput(e) {
+    changingPic({ profilePicture: e.target.value })
+    console.log(initialPic)
+    setError({ ...error, errors: '' })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (!initialPic) return
+    axios.put('/api/profile', initialPic, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(resp => updatePicture(resp.data.userProfilePicture))
+      .catch((err) => setError({ errors: err.response.data }))
+  }
+
   function buttonShow(boolean, spotId, made, spot) {
     if (!boolean && made) {
       return <button className="button is-success" onClick={() => authorize(spotId)}>Authorize</button>
@@ -89,7 +118,7 @@ const Profile = () => {
       if (!spot.authorized) {
         return <div>Request pending approval</div>
       }
-      return <div>This spot has been authorized</div>
+      return <div>This spot has been approved</div>
     }
   }
 
@@ -125,6 +154,19 @@ const Profile = () => {
   return (
     <div className="container">
       <div className="title username">{name}</div>
+      <img src={!picture ? 'https://www.driverhire.co.uk/wp-content/themes/driver-hire/img/placeholder-person.jpeg' : picture }></img>
+      <form className='form' onSubmit={e => handleSubmit(e)}>
+        <div className='field'>
+          <label className='label'>Upload Profile Picture</label>
+          <input
+            onChange={e => handleInput(e)}
+            type="text"
+            className="input"
+            value={picture.profilePicture}
+          />
+        </div>
+        <button className="button">Upload</button>
+      </form>
       <div className="title favTitle"> Your Favourite Places: </div>
       <div className="columns is-mobile is-multiline">
         {spots.map((spot, id) => {

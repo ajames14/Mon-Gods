@@ -70,7 +70,7 @@ function showOne(req, res) {
       console.log(req.body.user.id)
       console.log(resp._id)
       if (resp) {
-        return res.status(200).json({ favourites: resp.favourites, username: resp.username })
+        return res.status(200).json({ favourites: resp.favourites, username: resp.username, profilePicture: resp.profilePicture })
       } else return res.status(200).json({ message: 'NO' })
     })
     .catch(err => {
@@ -78,6 +78,18 @@ function showOne(req, res) {
         message: 'no user'
       })
     })
+}
+
+function update(req, res) {
+  req.body.user = req.currentUser
+  User
+    .findById(req.currentUser.id)
+    .then((user) => {
+      if (!user) return res.status(404).json({ message: 'Not Found' })
+      return user.set(req.body)
+    })
+    .then(user => user.save())
+    .then(user => res.status(202).json(user))
 }
 
 
@@ -94,11 +106,14 @@ function login(req, res) {
     .catch(() => res.status(401).json({ message: 'Unauthorized' }))
 }
 
+
+
 module.exports = {
   register,
   login,
   showOne,
   favourite,
-  deleteFavourite
+  deleteFavourite,
+  update
 }
 // exporting each 'route handling' function, taking advantage of es6 object short hand, same as saying { login: login }
