@@ -99,15 +99,47 @@ body {
 
 .favTitle {
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .username {
   margin-top: 40px;
+  font-size: 50px;
 }
 
 .grey {
-  background: lightgrey;
+  background: rgb(65, 63, 63);
+  color: white;
   padding: 25px;
-  margin-left: 13px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.profileImg {
+  width: 35%;
+  margin-bottom: 5px;
+}
+
+.profileInput {
+  width: 200px;
+  margin-right: 5px;
+}
+
+.picture {
+  background-color: rgb(65, 63, 63);
+  // background-image: url('https://s3.envato.com/files/239168698/light_blue_wood_background_18721.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 60%;
+  padding: 70px 0px 30px 0;
+}
+
+.uploadText {
+  margin-top: 30px;
+  font-size: 23px;
+  color: white;
+}
+
+.picButton {
+  font-family:  'Bebas Neue', sans-serif;
 }
