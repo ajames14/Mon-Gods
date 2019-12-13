@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
+import ReactMapGL, { LinearInterpolator, FlyToInterpolator, Marker, Popup, GeolocateControl } from 'react-map-gl'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const initialViewport = {
   width: 1000,
@@ -26,7 +27,7 @@ const SurfMap = () => {
     axios.get('/api/spots')
       .then((response) => {
         response.data.map((spots) => spotsArray.push({
-          lat: spots.lat, long: spots.long
+          id: spots._id, name: spots.spotName, country: spots.country, region: spots.region, lat: spots.lat, long: spots.long, image: spots.image
         }))
         setSpotdata(filterSurfData(spotsArray))
         // console.log(spotsArray)
@@ -34,13 +35,13 @@ const SurfMap = () => {
       .catch(err => setError({ errors: err.response.status }))
   }, [])
 
-  function filterSurfData(goodspots){
+  function filterSurfData(goodspots) {
     return goodspots.filter(spots => {
       return spots.lat !== undefined || spots.long !== undefined
     })
   }
 
-  function loadSurfMarkers(){
+  function loadSurfMarkers() {
     // console.log(spotdata)
     return spotdata.map((spot, i) => {
       return (
@@ -48,8 +49,41 @@ const SurfMap = () => {
           key={'marker' + i}
           latitude={Number(spot.lat)}
           longitude={Number(spot.long)}
+        ><button
+          className="marker-btn" value={spot.id}
+          onClick={e => {
+            e.preventDefault()
+            console.log(showPopup)
+            setShowPopup(spot.id)
+          }}
         >
+          </button>
+          {/* <SurfPin size={20} onClick={e => {
+            e.preventDefault()
+           setShowPopup(spot)
+          }}/> */}
           <div>🏄🏽‍</div>
+          {showPopup === spot.id ? (
+            <Popup
+              tipSize={5}
+              latitude={Number(spot.lat)}
+              longitude={Number(spot.long)}
+              // onClose={() => {
+              //   setShowPopup(false)
+              // }}
+              anchor="top"
+            >
+              <div>
+                <Link to={`/spots/${spot.id}`}>
+
+                  <h2> {spot.name}
+                  </h2>
+                </Link>
+                <p>{spot.region}, {spot.country}</p>
+
+              </div>
+            </Popup>
+          ) : null}
         </Marker>
       )
     })

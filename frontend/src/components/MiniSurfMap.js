@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
+import ReactMapGL, { LinearInterpolator, FlyToInterpolator, Marker, Popup, GeolocateControl } from 'react-map-gl'
+import axios from 'axios'
 
 const initialViewport = {
   width: 500,
@@ -42,7 +43,9 @@ const MiniSurfMap = ({ lat, lon }) => {
       height: 300,
       latitude: parseInt(lat),
       longitude: parseInt(lon),
-      zoom: 1
+      zoom: 10,
+      transitionDuration: 3000,
+      transitionInterpolator: new FlyToInterpolator()
     })
   }
 
@@ -54,7 +57,6 @@ const MiniSurfMap = ({ lat, lon }) => {
 
   return (
     <React.Fragment>
-      <p>hello</p>
       <ReactMapGL
         {...viewport}
         mapStyle="mapbox://styles/mapbox/streets-v11"
@@ -73,3 +75,69 @@ const MiniSurfMap = ({ lat, lon }) => {
 }
 
 export default MiniSurfMap
+
+
+
+// import React, { useState, useEffect } from 'react'
+// import ReactMapGL, { LinearInterpolator, FlyToInterpolator, Marker, Popup, GeolocateControl } from 'react-map-gl'
+// import axios from 'axios'
+// const initialViewport = {
+//   width: 500,
+//   height: 500,
+//   latitude: 44.84044,
+//   longitude: -0.5805,
+//   zoom: 8
+// }
+// const errorInitialState = {
+//   errors: ''
+// }
+// const SinglespotMap  = ({ lat, long }) => {
+//   const [viewport, setViewport] = useState(initialViewport)
+//   const [spotdata, setSpotdata] = useState([])
+//   const [showPopup, setShowPopup] = useState(null)
+//   const [error, setError] = useState(errorInitialState)
+//   useEffect(() => {
+//     console.log('LONG', long)
+//     console.log('-------------LATT', lat)
+//     spotLongLat(lat, long)
+//     console.log('-----------HSAIDHIASHDIAHSssdadsadasJDKAHJAKSCHKJ LONG', long)
+//     console.log('-------------HSAIDHIASHDIAHSJDKAasdasdasdaHJAKSCHKJ LATT', lat)
+//     console.log('..veiew', viewport)
+//   }, [lat, long])
+
+
+  
+//   function spotLongLat() {
+//     setViewport({
+//       width: 300,
+//       height: 300,
+//       latitude: parseInt(lat),
+//       longitude: parseInt(long),
+//       zoom: 10,
+//       transitionDuration: 3000,
+//       transitionInterpolator: new FlyToInterpolator()
+//     })
+//   }
+//   ///------------------------------------------------///
+//   /// fix  moving the map moves the surfer           ///
+//   ///------------------------------------------------///
+//   return (
+//     <React.Fragment>
+//       <p>hello</p>
+//       <ReactMapGL
+//         {...viewport}
+//         mapStyle="mapbox://styles/mapbox/streets-v11"
+//         mapboxApiAccessToken='pk.eyJ1IjoiYXdhbC15IiwiYSI6ImNrM3lqbnh0czA1YTQzZ3J1ZDRwaW15ZW8ifQ.48aoOHJL0iRF-Uf69S9tLQ'
+//         onViewportChange={(viewport) => setViewport(viewport)}
+//       >
+//         <Marker
+//           latitude={viewport.latitude}
+//           longitude={viewport.longitude}
+//         >
+//           <div>🏄</div>
+//         </Marker>
+//       </ReactMapGL>
+//     </React.Fragment>
+//   )
+// }
+// export default SinglespotMap

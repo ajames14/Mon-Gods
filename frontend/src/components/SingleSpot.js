@@ -284,7 +284,7 @@ const SingleSpot = (props) => {
         </section>
       </div>
       {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
-      {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />}
+      {/* {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />} */}
       {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
       <div>
         {isOwner(data) &&
