@@ -12,22 +12,26 @@ const Home = () => (
           <div id='titles'>
             <h1>Swell</h1>
             <h2>Find your Favourite Surf Spot</h2>
-            <Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >
+            <Link activeClass="active" className="test1" spy={true} smooth={true} onClick={() => scroll.scrollTo(870)} duration={500} >
               <button id='search' className='button'>Start Searching</button>
             </Link>
           </div>
         </LazyHero>
       </section>
-      <section className='hero is-fullheight'>
-        <div className='hero-body'>
-          <div className="section">
-            <CountrySearch className="column" />
-            <SurfMap className="column" />
+      <section className='section is-fullheight'>
+          <div className="columns">
+            <CountrySearch className="column is-7" />
+            <SurfMap className="column big-surf-map " />
           </div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"/>
       </section>
     </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>SWELL</strong> by monGods
+    </p>
+      </div>
+    </footer>
   </React.Fragment>
 )
 

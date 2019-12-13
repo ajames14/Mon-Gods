@@ -3,8 +3,8 @@ import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
 import axios from 'axios'
 
 const initialViewport = {
-  width: 1200,
-  height: 900,
+  width: 1000,
+  height: 700,
   latitude: 44.84044,
   longitude: -0.5805,
   zoom: 3
@@ -57,12 +57,12 @@ const SurfMap = () => {
 
   return (
     <React.Fragment>
-      <p>hello</p>
       <ReactMapGL
         {...viewport}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
+        mapStyle="mapbox://styles/mapbox/light-v10"
         mapboxApiAccessToken='pk.eyJ1IjoiYXdhbC15IiwiYSI6ImNrM3lqbnh0czA1YTQzZ3J1ZDRwaW15ZW8ifQ.48aoOHJL0iRF-Uf69S9tLQ'
         onViewportChange={(viewport) => setViewport(viewport)}
+        className="big-surf-map"
       >
         {loadSurfMarkers()}
       </ReactMapGL>
