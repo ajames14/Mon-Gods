@@ -12,17 +12,17 @@ const Home = () => (
           <div id='titles'>
             <h1>Swell</h1>
             <h2>Find your Favourite Surf Spot</h2>
-            <Link activeClass="active" className="test1" onClick={() => scroll.scrollMore(880, { delay: 1000 })} spy={true} smooth={true} duration={500} >
+            <Link activeClass="active" className="test1" spy={true} smooth={true} onClick={() => scroll.scrollTo(870)} duration={500} >
               <button id='search' className='button'>Start Searching</button>
             </Link>
           </div>
         </LazyHero>
       </section>
       <section className='section is-fullheight'>
-        <div className="columns">
-          <CountrySearch className="column is-7" />
-          <SurfMap className="column big-surf-map " />
-        </div>
+          <div className="columns">
+            <CountrySearch className="column is-7" />
+            <SurfMap className="column big-surf-map " />
+          </div>
       </section>
     </div>
     <footer class="footer">
