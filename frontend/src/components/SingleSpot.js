@@ -259,6 +259,7 @@ const SingleSpot = (props) => {
                 {/* <br />
                 {people} rating */}
               </div>
+              <br />
               <div id="waves">
                 <div className="imgDiv">
                   <img className="ratingImg" id="wave1" src='../images/wave2.png' />

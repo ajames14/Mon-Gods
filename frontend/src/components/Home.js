@@ -12,7 +12,7 @@ const Home = () => (
           <div id='titles'>
             <h1>Swell</h1>
             <h2>Find your Favourite Surf Spot</h2>
-            <Link activeClass="active" className="test1" spy={true} smooth={true} onClick={() => scroll.scrollTo(870)} duration={500} >
+            <Link activeClass="active" className="test1" spy={true} smooth={true} onClick={() => scroll.scrollTo(800)} duration={500} >
               <button id='search' className='button'>Start Searching</button>
             </Link>
           </div>

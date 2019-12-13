@@ -99,8 +99,8 @@ const ForecastChart = ({ lat, lon }) => {
       headers: {
         // 'Authorization': 'b8804aa6-1ad4-11ea-a93c-0242ac130002-b8804bdc-1ad4-11ea-a93c-0242ac130002'
         // 'Authorization': '6e9efd2c-1847-11ea-8553-0242ac130002-6e9f0042-1847-11ea-8553-0242ac130002'
-        'Authorization': 'd54eb8a4-1c03-11ea-afbb-0242ac130002-d54eb9c6-1c03-11ea-afbb-0242ac130002'
-        // 'Authorization': '90dc9ef0-1c41-11ea-a453-0242ac130002-90dca008-1c41-11ea-a453-0242ac130002'
+        // 'Authorization': 'd54eb8a4-1c03-11ea-afbb-0242ac130002-d54eb9c6-1c03-11ea-afbb-0242ac130002'
+        'Authorization': '90dc9ef0-1c41-11ea-a453-0242ac130002-90dca008-1c41-11ea-a453-0242ac130002'
       }
     })
       .then(resp => resp.json())

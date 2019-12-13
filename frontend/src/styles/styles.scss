@@ -25,7 +25,6 @@ body {
   color: white;
   height: 100vh;
   background-position: center;
-  background-image: url('https://i.pinimg.com/originals/18/92/17/18921735a859b696c412f59c8ce5e220.jpg');
   background-size: cover;
   position: relative;
   #titles {
@@ -480,4 +479,10 @@ body {
 
 .picButton {
   font-family:  'Bebas Neue', sans-serif;
+}
+
+.small-name {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: -10px;
 }

@@ -85,7 +85,7 @@ const Profile = () => {
           </Link>
         </div>
         <Link to={`/spots/${spot._id}`} className="card-content">
-          <div className="subtitle name" to={`/spots/${spot._id}`}>{spot.spotName}</div>
+          <div className="subtitle small-name" to={`/spots/${spot._id}`}>{spot.spotName}</div>
           <p className="has-text-grey-darker">{spot.country}</p>
           <div className="has-text-grey-darker">Rating: {checkRating([spot.rating])}
           </div>
