@@ -76,18 +76,20 @@ const Profile = () => {
 
   const SpotCard = (spot, id, spotId, boolean, made) => (
     <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-      <div className="card">
+      <div className="card small-card hvr-grow">
         <div className="card-image">
-          <figure className="image is-4by3">
-            <img src={spot.image} alt="Placeholder image" />
-          </figure>
+          <Link to={`/spots/${spot._id}`}>
+            <figure className="small-img image is-4by3">
+              <img src={spot.image} alt="Placeholder image" />
+            </figure>
+          </Link>
         </div>
-        <div className="card-content">
-          <Link className="subtitle" to={`/spots/${spot._id}`}>{spot.spotName}</Link>
+        <Link to={`/spots/${spot._id}`} className="card-content">
+          <div className="subtitle name" to={`/spots/${spot._id}`}>{spot.spotName}</div>
           <p className="has-text-grey-darker">{spot.country}</p>
-          <div>Rating: {checkRating([spot.rating])}
+          <div className="has-text-grey-darker">Rating: {checkRating([spot.rating])}
           </div>
-        </div>
+        </Link>
         {buttonShow(boolean, spotId, made, spot)}
       </div>
     </div>
@@ -111,14 +113,14 @@ const Profile = () => {
 
   function buttonShow(boolean, spotId, made, spot) {
     if (!boolean && made) {
-      return <button className="button is-success" onClick={() => authorize(spotId)}>Authorize</button>
+      return <button className="button is-success level-left blue-text button-left" onClick={() => authorize(spotId)}>Authorize</button>
     } else if (made) {
-      return <button className="button is-danger" onClick={() => deleteFavourite(spotId)}>X</button>
+      return <button className="button is-danger level-left blue-text button-left" onClick={() => deleteFavourite(spotId)}>X</button>
     } else {
       if (!spot.authorized) {
-        return <div>Request pending approval</div>
+        return <div className="red">Request pending approval</div>
       }
-      return <div>This spot has been approved</div>
+      return <div className="green">This spot has been approved</div>
     }
   }
 
@@ -139,10 +141,10 @@ const Profile = () => {
   }
 
 
-  function checkEmpty() {
-    if (favs.length === 0) {
-      return <div className="subtitle grey">Go add some favourite places!</div>
-    }
+  function checkEmpty(boolean) {
+    if (boolean && favs.length === 0) {
+      return <Link className="subtitle grey hvr-grow" to="/spots">Go add some favourite places!</Link>
+    } else if (!boolean && spotsMade.length === 0) return <Link className="subtitle grey" to="/newspot">No spots created yet - go add one!</Link>
   }
 
   function isAdmin() {
@@ -152,29 +154,31 @@ const Profile = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container has-text-centered">
       <div className="title username">{name}</div>
-      <img src={!picture ? 'https://www.driverhire.co.uk/wp-content/themes/driver-hire/img/placeholder-person.jpeg' : picture }></img>
-      <form className='form' onSubmit={e => handleSubmit(e)}>
-        <div className='field'>
-          <label className='label'>Upload Profile Picture</label>
-          <input
-            onChange={e => handleInput(e)}
-            type="text"
-            className="input"
-            value={picture.profilePicture}
-          />
-        </div>
-        <button className="button">Upload</button>
-      </form>
+      <div className="container picture">
+        <img className="profileImg" src={!picture ? 'https://www.driverhire.co.uk/wp-content/themes/driver-hire/img/placeholder-person.jpeg' : picture}></img>
+        <form className='form' onSubmit={e => handleSubmit(e)}>
+          <div className='field'>
+            <label className='label uploadText'>Upload A New Profile Picture</label>
+            <input
+              onChange={e => handleInput(e)}
+              type="text"
+              className="input profileInput"
+              value={picture.profilePicture}
+            />
+            <button className="button picButton">Upload</button>
+          </div>
+        </form>
+      </div>
       <div className="title favTitle"> Your Favourite Places: </div>
-      <div className="columns is-mobile is-multiline">
+      <div className="columns is-mobile is-multiline is-centered">
         {spots.map((spot, id) => {
           if (favs.includes(spot._id)) {
             return SpotCard(spot, id, spot._id, true, true)
           }
         })}
-        {checkEmpty()}
+        {checkEmpty(true)}
       </div>
       <div className="title">{isAdmin()}</div>
       <div className="columns is-mobile is-multiline">
@@ -184,10 +188,10 @@ const Profile = () => {
           }
         })}
       </div>
-      <div className="title">Spots you have created</div>
-      <div className="columns is-mobile is-multiline">
+      <div className="title favTitle"> Surf Spots you've created</div>
+      <div className="columns is-mobile is-multiline is-centered">
+        {checkEmpty(false)}
         {spotsMade.map((spot, id, ) => {
-          console.log(spot.spotName)
           return SpotCard(spot, id, spot._id, false, false)
         })}
       </div>

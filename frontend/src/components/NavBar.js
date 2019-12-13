@@ -29,7 +29,7 @@ class Navbar extends React.Component {
   }
 
   render() {
-    return <div className="navbar">
+    return <div className="navbar is-hoverable">
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">Swell</Link>

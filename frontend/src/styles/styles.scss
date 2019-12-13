@@ -25,6 +25,141 @@ body {
   color: white;
   height: 100vh;
   background-position: center;
+  background-image: url('https://i.pinimg.com/originals/18/92/17/18921735a859b696c412f59c8ce5e220.jpg');
+  background-size: cover;
+  position: relative;
+  #titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h1 {
+    font-size: 5.6rem;
+    margin-top: 15px;
+    letter-spacing: 0.1rem;
+    margin-right: 600px;
+  }
+  h2 {
+    font-size: 2.2rem;
+    margin-right: 600px;
+  }
+  #search {
+    margin-top: 15px;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+    font-size: 1.1rem;
+    margin-right: 600px;
+  }
+}
+
+/* ---------------------------- */
+/*  search bar                  */
+/* ---------------------------- */
+
+.country-search-bar {
+  padding-right: 50px;
+  padding-top: 50px;
+  // border: 1px solid black;
+}
+
+.big-surf-map {
+  margin-left: 20px;
+}
+
+// .mapboxgl-canvas-container {
+//   height: 100vh;
+// }
+
+
+/* ---------------------------- */
+/*  Country Page            */
+/* ---------------------------- */
+
+#country-title {
+  text-transform: capitalize;
+}
+
+/* ---------------------------- */
+/*  Single Spot Page            */
+/* ---------------------------- */
+
+#description {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1rem;
+}
+
+/* ---------------------------- */
+/*  Rating Styles               */
+/* ---------------------------- */
+
+.ratingImg {
+  object-fit: cover;
+  object-position: 0px;
+  background-size: 100%;
+  width: 0%;
+  height: 52px;
+
+}
+
+.imgDiv {
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  margin: -50px 0px;
+}
+
+
+/* ---------------------------- */
+/*  Profile page               */
+/* ---------------------------- */
+
+
+.favTitle {
+  margin-top: 50px;
+}
+
+.username {
+  margin-top: 40px;
+}
+
+.grey {
+  background: lightgrey;
+  padding: 25px;
+  margin-left: 13px;
+  margin-bottom: 40px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Anton|Bebas+Neue|Fjalla+One|Barlow+Semi+Condensed');
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Bebas Neue', cursive;
+}
+
+
+.navbar {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  height: 10px;
+}
+
+
+/* ---------------------------- */
+/*  HOME PAGE                   */
+/* ---------------------------- */
+
+#home-page {
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  height: 100vh;
+  background-position: center;
   background-size: cover;
   position: relative;
   #titles {
@@ -65,7 +200,7 @@ body {
 
 #dropdowns {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .filters {
@@ -76,21 +211,21 @@ body {
   margin: 10px 30px;
 }
 
-.card {
-  width: 380px;
-  height: auto;
-  margin: 10px 0px;
-}
+// .card {
+//   width: 380px;
+//   height: auto;
+//   margin: 10px 0px;
+// }
 
 
 /* ---------------------------- */
 /*  Single Spot Page            */
 /* ---------------------------- */
 
-#description {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  font-size: 1rem;
-}
+// #description {
+//   font-family: 'Barlow Semi Condensed', sans-serif;
+//   font-size: 1rem;
+// }
 
 
 /* ---------------------------- */
@@ -161,7 +296,57 @@ body {
       align-items: center;
     }
   }
+}
 
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+
+.card {
+  // border: 15px solid rgb(2, 5, 44);
+  box-shadow: 20px 15px 10px 0 rgba(70, 69, 69, 0.432), 0 6px 20px 0 rgba(105, 104, 104, 0.041);
+  // border-radius: 10px;
+  width: 460px;
+  height: 650px;
+  margin-bottom: 10%;
+  background-color: rgba(215, 234, 241, 0.575);
+  .large-img {
+    padding-bottom: 50px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(2, 5, 44);
+  }
+  .blue-text {
+    color: rgb(2, 5, 44);
+  }
+  .name {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: -1px;
+  }
+  .region {
+    margin-bottom: -15px;
+    font-size: 20px;
+  }
+  .description {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 17px;
+    color: rgb(2, 5, 44);
+    padding: 10%;
+    text-align: center;
+  }
 }
 
 /* ---------------------------- */
@@ -220,18 +405,79 @@ body {
 /*  Profile page               */
 /* ---------------------------- */
 
+.small-card {
+  height: 430px;
+  // box-shadow:
+}
+
+.button-left {
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+
+.green {
+  color: rgb(91, 173, 91);
+}
+.red {
+  color: rgb(233, 79, 79);
+}
+
+.black-text {
+  color: light-grey;
+}
+
+.small-img {
+  padding-bottom: 10px;
+}
 
 .favTitle {
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .username {
   margin-top: 40px;
+  font-size: 70px;
 }
 
 .grey {
-  background: lightgrey;
+  background: rgb(65, 63, 63);
+  color: white;
   padding: 25px;
-  margin-left: 13px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.grey:hover {
+  color: white
+}
+
+.profileImg {
+  width: 35%;
+  margin-bottom: 5px;
+}
+
+.profileInput {
+  width: 200px;
+  margin-right: 5px;
+}
+
+.picture {
+  background-color: rgb(65, 63, 63);
+  // background-image: url('https://s3.envato.com/files/239168698/light_blue_wood_background_18721.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 60%;
+  padding: 70px 0px 70px 0;
+}
+
+.uploadText {
+  margin-top: 30px;
+  font-size: 23px;
+  color: white;
+}
+
+.picButton {
+  font-family:  'Bebas Neue', sans-serif;
 }

@@ -31,7 +31,7 @@ const App = () => (
       <Route path='/login' component={Login} />
       <SecureRoute path='/newspot' component={NewSpot} />
       <SecureRoute path='/edit/:id' component={EditSpot} />
-      <Route path='/profile' component={Profile} />
+      <SecureRoute path='/profile' component={Profile} />
     </Switch>
   </BrowserRouter>
 )

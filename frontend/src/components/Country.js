@@ -43,7 +43,7 @@ const CountrySpots = (props) => {
   }
 
   return (
-    <div>
+    <div className="spotCard-background">
       <LazyHero imageSrc="https://images.unsplash.com/photo-1455729552865-3658a5d39692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" minHeight='40vh' parallaxOffset={100} overflow='hidden' opacity={0} transitionDuration={0} id='country-image'>
         <div>
           <div className="title" id="country-title">{props.match.params.country}</div>
@@ -98,7 +98,7 @@ const CountrySpots = (props) => {
         </form>
         <br />
         <div id="spots-overview">
-          <div className="container">
+          <div className="container has-text-centered">
             <div className="columns is-mobile is-multiline">
               {countries
                 .filter(elem => {
@@ -136,7 +136,8 @@ const CountrySpots = (props) => {
                   // || elem.region.toLowerCase().includes(filter.toLowerCase())      =>>>>>>>>> allows for form to also filter field also include spot's region
                 })
                 .map((spot, id) => {
-                  return <SpotCard key={id} spot={spot} />                 //   =>>>>>>>>> ADD message for no results found
+                  return <SpotCard key={id} spot={spot} />              
+                     //   =>>>>>>>>> ADD message for no results found
                 })}
             </div>
           </div>
