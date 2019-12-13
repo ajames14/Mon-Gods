@@ -76,18 +76,20 @@ const Profile = () => {
 
   const SpotCard = (spot, id, spotId, boolean, made) => (
     <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-      <div className="card">
+      <div className="card small-card hvr-grow">
         <div className="card-image">
-          <figure className="image is-4by3">
-            <img src={spot.image} alt="Placeholder image" />
-          </figure>
+          <Link to={`/spots/${spot._id}`}>
+            <figure className="small-img image is-4by3">
+              <img src={spot.image} alt="Placeholder image" />
+            </figure>
+          </Link>
         </div>
-        <div className="card-content">
-          <Link className="subtitle" to={`/spots/${spot._id}`}>{spot.spotName}</Link>
+        <Link to={`/spots/${spot._id}`} className="card-content">
+          <div className="subtitle name" to={`/spots/${spot._id}`}>{spot.spotName}</div>
           <p className="has-text-grey-darker">{spot.country}</p>
-          <div>Rating: {checkRating([spot.rating])}
+          <div className="has-text-grey-darker">Rating: {checkRating([spot.rating])}
           </div>
-        </div>
+        </Link>
         {buttonShow(boolean, spotId, made, spot)}
       </div>
     </div>
@@ -111,14 +113,14 @@ const Profile = () => {
 
   function buttonShow(boolean, spotId, made, spot) {
     if (!boolean && made) {
-      return <button className="button is-success level-right" onClick={() => authorize(spotId)}>Authorize</button>
+      return <button className="button is-success level-left blue-text button-left" onClick={() => authorize(spotId)}>Authorize</button>
     } else if (made) {
-      return <button className="button is-danger level-left" onClick={() => deleteFavourite(spotId)}>X</button>
+      return <button className="button is-danger level-left blue-text button-left" onClick={() => deleteFavourite(spotId)}>X</button>
     } else {
       if (!spot.authorized) {
-        return <div>Request pending approval</div>
+        return <div className="red">Request pending approval</div>
       }
-      return <div>This spot has been approved</div>
+      return <div className="green">This spot has been approved</div>
     }
   }
 
@@ -141,7 +143,7 @@ const Profile = () => {
 
   function checkEmpty(boolean) {
     if (boolean && favs.length === 0) {
-      return <Link className="subtitle grey" to="/spots">Go add some favourite places!</Link>
+      return <Link className="subtitle grey hvr-grow" to="/spots">Go add some favourite places!</Link>
     } else if (!boolean && spotsMade.length === 0) return <Link className="subtitle grey" to="/newspot">No spots created yet - go add one!</Link>
   }
 

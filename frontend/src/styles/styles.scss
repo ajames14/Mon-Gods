@@ -250,7 +250,7 @@ body {
   height: 650px;
   margin-bottom: 10%;
   background-color: rgba(215, 234, 241, 0.575);
-  .image {
+  .large-img {
     padding-bottom: 50px;
     margin-bottom: 5px;
     border-bottom: 5px solid rgb(2, 5, 44);
@@ -302,6 +302,31 @@ body {
 /*  Profile page               */
 /* ---------------------------- */
 
+.small-card {
+  height: 430px;
+  // box-shadow:
+}
+
+.button-left {
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+
+.green {
+  color: rgb(91, 173, 91);
+}
+.red {
+  color: rgb(233, 79, 79);
+}
+
+.black-text {
+  color: light-grey;
+}
+
+.small-img {
+  padding-bottom: 10px;
+}
 
 .favTitle {
   margin-top: 50px;
@@ -310,7 +335,7 @@ body {
 
 .username {
   margin-top: 40px;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .grey {
@@ -319,6 +344,10 @@ body {
   padding: 25px;
   margin-bottom: 50px;
   margin-top: 30px;
+}
+
+.grey:hover {
+  color: white
 }
 
 .profileImg {
@@ -337,7 +366,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 60%;
-  padding: 70px 0px 30px 0;
+  padding: 70px 0px 70px 0;
 }
 
 .uploadText {

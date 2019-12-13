@@ -11,7 +11,7 @@ const SpotCard = ({ spot }) => (
     <div className="card has-text-centered hvr-grow">
       <Link to={`/spots/${spot._id}`}>
         <div className="card-image">
-          <figure className="image is-5by3">
+          <figure className="image is-5by3 large-img">
             <img src={spot.image} alt="Placeholder image" />
           </figure>
         </div>
