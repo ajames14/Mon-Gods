@@ -136,7 +136,8 @@ const CountrySpots = (props) => {
                   // || elem.region.toLowerCase().includes(filter.toLowerCase())      =>>>>>>>>> allows for form to also filter field also include spot's region
                 })
                 .map((spot, id) => {
-                  return <SpotCard key={id} spot={spot} />                 //   =>>>>>>>>> ADD message for no results found
+                  return <SpotCard key={id} spot={spot} />              
+                     //   =>>>>>>>>> ADD message for no results found
                 })}
             </div>
           </div>
