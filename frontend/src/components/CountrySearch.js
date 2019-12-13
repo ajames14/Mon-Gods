@@ -47,17 +47,17 @@ const CountrySearch = () => {
   // console.log('ALL DATA', data)
 
   return (
-    <Element name="test1" className="element" >
+    <Element name="test1"  className="element">
       <div className="field">
-        <label className="label">Name</label>
         <div className="control">
           <input
             className="input"
             type="text"
             id='search-input'
-            placeholder='Search...'
+            placeholder='Search a country...'
             name='query'
             onChange={filter.bind(this)}
+            id="search-bar"
           />
         </div>
       </div>
@@ -68,10 +68,11 @@ const CountrySearch = () => {
         .map((country, i) => {
           return (
             <Link key={i} to={`/spots/countries/${country.toLowerCase()}`}>
-              <li style={{
+              <li className="country-list" style={{
                 listStyleType: 'none',
                 //if is hidden is true then display none, else if something is in the filter filed display
-                display: isHidden ? 'none' : 'block'
+                display: isHidden ? 'none' : 'block',
+                fontSize: '30px'
               }}
               value={country}>{country}
               </li>
