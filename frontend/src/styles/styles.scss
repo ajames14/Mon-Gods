@@ -65,7 +65,7 @@ body {
 
 #dropdowns {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .filters {
@@ -90,10 +90,55 @@ body {
 /*  Single Spot Page            */
 /* ---------------------------- */
 
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+
 .card {
-  width: 380px;
-  height: auto;
-  margin: 10px 0px;
+  // border: 15px solid rgb(2, 5, 44);
+  box-shadow: 20px 15px 10px 0 rgba(70, 69, 69, 0.432), 0 6px 20px 0 rgba(105, 104, 104, 0.041);
+  // border-radius: 10px;
+  width: 460px;
+  height: 650px;
+  margin-bottom: 10%;
+  background-color: rgba(215, 234, 241, 0.575);
+  .image {
+    padding-bottom: 50px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(2, 5, 44);
+  }
+  .blue-text {
+    color: rgb(2, 5, 44);
+  }
+  .name {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: -1px;
+  }
+  .region {
+    margin-bottom: -15px;
+    font-size: 20px;
+  }
+  .description {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 17px;
+    color: rgb(2, 5, 44);
+    padding: 10%;
+    text-align: center;
+  }
 }
 
 
