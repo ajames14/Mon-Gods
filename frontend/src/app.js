@@ -17,6 +17,9 @@ import CountrySpots from './components/Country'
 import SecureRoute from './components/SecureRoute'
 import Profile from './components/Profile'
 
+const path = require('path')
+const dist = path.join(__dirname, 'dist')
+
 
 
 const App = () => (
