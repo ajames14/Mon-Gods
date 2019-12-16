@@ -231,58 +231,73 @@ const SingleSpot = (props) => {
 
 
   return (
-    <section className="section">
+    <section id='single-spot' className="section">
       <div className="container">
-        <div className="columns is-multiline">
-          <div className="column is-half-tablet">
-            <p className="title">
-              {data.spotName}
-            </p>
-            <p className="subtitle">
-              {`${data.country} - ${data.region}`}
-            </p>
-            <p id="description">
-              {data.description}
-            </p>
+        <div id='section-one'>
+          <div className="columns is-multiline">
+            <div className="column is-half-tablet main-column">
+              <p className="title">
+                {data.spotName}
+              </p>
+              <p className="subtitle">
+                {`${data.country} - ${data.region}`}
+              </p>
+              <p id="description">
+                {data.description}
+              </p>
+              <br />
+              {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />}
+            </div>
+            <div id='image-column' className="column is-half-tablet main-column">
+              <img id='spot-image' src={data.image} />
+            </div>
           </div>
-          <div className="column is-half-tablet">
-            <img src={data.image} />
+          <div id='rating-box'>
+            <div id='current-rating'>
+              <div>Rating: {((checkRating()) * 5).toFixed(2)} stars
+            {/* {checkRating()} / {(checkRating() * 100).toFixed(2)}% */}
+                {/* <br />
+                {people} rating */}
+              </div>
+              <br />
+              <div id="waves">
+                <div className="imgDiv">
+                  <img className="ratingImg" id="wave1" src='../images/wave2.png' />
+                </div>
+                <div className="imgDiv">
+                  <img className="ratingImg" id="wave2" src='../images/wave2.png' />
+                </div>
+                <div className="imgDiv">
+                  <img className="ratingImg" id="wave3" src='../images/wave2.png' />
+                </div>
+                <div className="imgDiv">
+                  <img className="ratingImg" id="wave4" src='../images/wave2.png' />
+                </div>
+                <div className="imgDiv">
+                  <img className="ratingImg" id="wave5" src='../images/wave2.png' />
+                </div>
+
+              </div>
+            </div>
+            <div id='client-rating'>
+              <label>Rate this Spot:</label>
+              <div id='button-box'>
+                <button className='button is-small is-info is-outlined rating-button' onClick={() => con(1)}>1</button>
+                <button className='button is-small is-info is-outlined rating-button' onClick={() => con(2)}>2</button>
+                <button className='button is-small is-info is-outlined rating-button' onClick={() => con(3)}>3</button>
+                <button className='button is-small is-info is-outlined rating-button' onClick={() => con(4)}>4</button>
+                <button className='button is-small is-info is-outlined rating-button' onClick={() => con(5)}>5</button>
+                {error && <small className="help is-danger">
+                  {error}
+                </small>}
+              </div>
+              <button className='button is-info favourite' onClick={() => addFavourite()}> Add to favourites</button>
+            </div>
           </div>
-          <div>Rating: {checkRating()} / {(checkRating() * 100).toFixed(2)}%
-            <br />
-            Or: {((checkRating()) * 5).toFixed(2)} stars
-            <br />
-            {people} people have rated
-          </div>
+          {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
         </div>
-        <button className='is button' onClick={() => con(1)}>1</button>
-        <button className='is button' onClick={() => con(2)}>2</button>
-        <button className='is button' onClick={() => con(3)}>3</button>
-        <button className='is button' onClick={() => con(4)}>4</button>
-        <button className='is button' onClick={() => con(5)}>5</button>
-        {error && <small className="help is-danger">
-          {error}
-        </small>}
-        <br /> <br />
-        <section className="section columns">
-          <div className="imgDiv">
-            <img className="ratingImg" id="wave1" src='../images/wave2.png' />
-          </div>
-          <div className="imgDiv">
-            <img className="ratingImg" id="wave2" src='../images/wave2.png' />
-          </div>
-          <div className="imgDiv">
-            <img className="ratingImg" id="wave3" src='../images/wave2.png' />
-          </div>
-          <div className="imgDiv">
-            <img className="ratingImg" id="wave4" src='../images/wave2.png' />
-          </div>
-          <div className="imgDiv">
-            <img className="ratingImg" id="wave5" src='../images/wave2.png' />
-          </div>
-          <button className='is button' onClick={() => addFavourite()}> Add to favourites</button>
-        </section>
       </div>
+<<<<<<< HEAD
       {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
       {/* {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />} */}
       {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
@@ -306,12 +321,43 @@ const SingleSpot = (props) => {
           <>
             <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
               Edit Spot
+=======
+      <div className='container' id='section-2'>
+        <div className='columns'>
+          <div id='surf-map-column' className="column is-half-tablet main-column">
+            {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
+            <div>
+              {isOwner(data) &&
+                <>
+                  <p><i>You created this spot</i></p>
+                  <br />
+                </>
+              }
+              {isAdmin() &&
+                <>
+                  <button className="button is-danger" onClick={
+                    () => makeSure()
+                  }>
+                    {text}
+                  </button>
+                </>
+              }
+              {isAdmin() &&
+                <>
+                  <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
+                    Edit Spot
+>>>>>>> development
             </Link>
-          </>
-        }
+                </>
+              }
+            </div>
+          </div>
+          <div className="column is-half-tablet main-column">
+            {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
+            <Comments data={data} updateComments={resp => updateComments(resp)} />
+          </div>
+        </div>
       </div>
-      {/* <ForecastChart lat={data.lat} lon={data.long} /> */}
-      <Comments data={data} updateComments={resp => updateComments(resp)} />
     </section>
   )
 }

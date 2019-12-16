@@ -56,11 +56,6 @@ const Comments = ({ data, updateComments }) => {
 
   if (!data.comments || data.comments.length === 0) {
     return <article className="media">
-      <figure className="media-left">
-        <p className="image is-64x64">
-          <img src="https://bulma.io/images/placeholders/128x128.png" />
-        </p>
-      </figure>
       <div className="media-content">
         <div className="content">
           <form className='form' onSubmit={e => handleSubmit(e)}>
@@ -76,7 +71,7 @@ const Comments = ({ data, updateComments }) => {
             {error.errors && error.errors.message === 'Unauthorized' && <small className="help is-danger">
               {error.errors.message} - Please log in
             </small>}
-            <button className="button">Post</button>
+            <button className="button is-info">Post</button>
           </form>
         </div>
       </div>
@@ -90,7 +85,7 @@ const Comments = ({ data, updateComments }) => {
             <article className="media" key={i}>
               <figure className="media-left">
                 <p className="image is-64x64">
-                  <img src={!elem.user.userProfilePicture ? 'https://bulma.io/images/placeholders/128x128.png' : elem.user.userProfilePicture} />
+                  <img src={!elem.user.userProfilePicture ? 'https://www.driverhire.co.uk/wp-content/themes/driver-hire/img/placeholder-person.jpeg' : elem.user.userProfilePicture} />
                 </p>
               </figure>
               <div className="media-content">
@@ -113,11 +108,6 @@ const Comments = ({ data, updateComments }) => {
       </div>
       <br />
       <article className="media">
-        <figure className="media-left">
-          <p className="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" />
-          </p>
-        </figure>
         <div className="media-content">
           <div className="content">
             <form className='form' onSubmit={e => handleSubmit(e)}>
@@ -133,7 +123,7 @@ const Comments = ({ data, updateComments }) => {
               {error.errors && error.errors.message === 'Unauthorized' && <small className="help is-danger">
                 {error.errors.message} - Please log in
               </small>}
-              <button className="button">Post</button>
+              <button className="button is-info ">Post</button>
             </form>
           </div>
         </div>

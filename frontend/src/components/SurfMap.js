@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { LinearInterpolator, FlyToInterpolator, Marker, Popup, GeolocateControl } from 'react-map-gl'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
 const initialViewport = {
   width: 1000,
   height: 700,
@@ -10,18 +9,14 @@ const initialViewport = {
   longitude: -0.5805,
   zoom: 3
 }
-
 const errorInitialState = {
   errors: ''
 }
-
 const SurfMap = () => {
   const [showPopup, setShowPopup] = useState(null)
   const [spotdata, setSpotdata] = useState([])
   const [viewport, setViewport] = useState(initialViewport)
-
   const [error, setError] = useState(errorInitialState)
-
   useEffect(() => {
     const spotsArray = spotdata
     axios.get('/api/spots')
@@ -34,13 +29,11 @@ const SurfMap = () => {
       })
       .catch(err => setError({ errors: err.response.status }))
   }, [])
-
   function filterSurfData(goodspots) {
     return goodspots.filter(spots => {
       return spots.lat !== undefined || spots.long !== undefined
     })
   }
-
   function loadSurfMarkers() {
     // console.log(spotdata)
     return spotdata.map((spot, i) => {
@@ -75,12 +68,10 @@ const SurfMap = () => {
             >
               <div>
                 <Link to={`/spots/${spot.id}`}>
-
                   <h2> {spot.name}
                   </h2>
                 </Link>
                 <p>{spot.region}, {spot.country}</p>
-
               </div>
             </Popup>
           ) : null}
@@ -88,7 +79,6 @@ const SurfMap = () => {
       )
     })
   }
-
   return (
     <React.Fragment>
       <ReactMapGL
@@ -102,7 +92,5 @@ const SurfMap = () => {
       </ReactMapGL>
     </React.Fragment>
   )
-
 }
-
 export default SurfMap

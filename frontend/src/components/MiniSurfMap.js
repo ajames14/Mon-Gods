@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+<<<<<<< HEAD
 import ReactMapGL, { LinearInterpolator, FlyToInterpolator, Marker, Popup, GeolocateControl } from 'react-map-gl'
 import axios from 'axios'
 
+=======
+import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
+>>>>>>> development
 const initialViewport = {
   width: 500,
   height: 500,
@@ -9,21 +13,16 @@ const initialViewport = {
   longitude: -0.5805,
   zoom: 8
 }
-
 const errorInitialState = {
   errors: ''
 }
-
 const MiniSurfMap = ({ lat, lon }) => {
   const [showPopup, setShowPopup] = useState(null)
   const [spotdata, setSpotdata] = useState([])
   const [viewport, setViewport] = useState(initialViewport)
-
   const [error, setError] = useState(errorInitialState)
-
   // console.log('asJDKAHJAKSCHKJ LONG', lon)
   // console.log('HsdasdaHJAKSCHKJ LATT', lat)
-
   useEffect(() => {
     console.log('LONG', lon)
     console.log('-------------LATT', lat)
@@ -36,7 +35,6 @@ const MiniSurfMap = ({ lat, lon }) => {
   ///------------------------------------------------///
   ///  how do you update only parts of the object... ///
   ///------------------------------------------------///
-
   function spotLongLat(lat, lon) {
     setViewport({
       width: 300,
@@ -48,13 +46,10 @@ const MiniSurfMap = ({ lat, lon }) => {
       transitionInterpolator: new FlyToInterpolator()
     })
   }
-
   // spotLongLat()
-
   ///------------------------------------------------///
   /// fix  moving the map moves the surfer           ///
   ///------------------------------------------------///
-
   return (
     <React.Fragment>
       <ReactMapGL
@@ -73,6 +68,7 @@ const MiniSurfMap = ({ lat, lon }) => {
     </React.Fragment>
   )
 }
+<<<<<<< HEAD
 
 export default MiniSurfMap
 
@@ -141,3 +137,6 @@ export default MiniSurfMap
 //   )
 // }
 // export default SinglespotMap
+=======
+export default MiniSurfMap
+>>>>>>> development
