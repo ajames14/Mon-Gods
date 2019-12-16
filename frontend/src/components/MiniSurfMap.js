@@ -44,7 +44,6 @@ const MiniSurfMap = ({ lat, lon }) => {
   ///------------------------------------------------///
   return (
     <React.Fragment>
-      <p>hello</p>
       <ReactMapGL
         {...viewport}
         mapStyle="mapbox://styles/mapbox/streets-v11"
