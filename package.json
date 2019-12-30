@@ -9,7 +9,7 @@
     "serve:back": "nodemon backend/app.js",
     "serve:front": "webpack-dev-server --mode-development",
     "build": "npm run seed; webpack -p",
-  	"start": "node backend/app.js"
+    "start": "node backend/app.js"
   },
   "author": "",
   "license": "ISC",
