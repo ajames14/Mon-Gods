@@ -243,7 +243,7 @@ const SingleSpot = (props) => {
             <img className="ratingImg" id="wave4" src='../images/wave2.png' />
           </div>
           <div className="imgDiv">
-            <img className="ratingImg" id="wave5" src='../images/wave2.png' />
+            <img className="ratingImg" id="wave5" src='../images/wave.png' />
           </div>
         </section>
       </div>
