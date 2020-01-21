@@ -297,31 +297,6 @@ const SingleSpot = (props) => {
           {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
         </div>
       </div>
-<<<<<<< HEAD
-      {/* <ForecastChart lat={data.lat} lon={data.long}/> */}
-      {/* {data.long && data.lat && <ForecastChart lon={data.long} lat={data.lat} />} */}
-      {data.long && data.lat && <MiniSurfMap lat={data.lat} lon={data.long} />}
-      <div>
-        {isOwner(data) &&
-          <>
-            <p><i>You created this spot</i></p>
-            <br />
-          </>
-        }
-        {isAdmin() &&
-          <>
-            <button className="button is-danger" onClick={
-              () => makeSure()
-            }>
-              {text}
-            </button>
-          </>
-        }
-        {isAdmin() &&
-          <>
-            <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
-              Edit Spot
-=======
       <div className='container' id='section-2'>
         <div className='columns'>
           <div id='surf-map-column' className="column is-half-tablet main-column">
@@ -346,7 +321,6 @@ const SingleSpot = (props) => {
                 <>
                   <Link className="button is-info" to={`/edit/${props.match.params.id}`}>
                     Edit Spot
->>>>>>> development
             </Link>
                 </>
               }
