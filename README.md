@@ -162,7 +162,6 @@ We also have a profile page were users can upload a photo, see all their favorit
 ## Challenges
 
 - Mapbox: Working with mapbox posed a bit of a challenge due to data conversation. Mapbox is data strict and fetching our data from our api required a lot of refactoring in order to suit the data format especially for the longtitude and lattitude. Next time, we would rather use a GeoJson file and insert our data into it than fetching directly from our API. 
-- ... ADD MORE
 
 ## Wins
 
@@ -176,6 +175,8 @@ We also have a profile page were users can upload a photo, see all their favorit
 We were happy with the overall funcionality of our website, however, there were a few things that we would have added. In particular:
 
 - When a user adds a new spot, provide functionality so that they can upload a beach/spot name to identify the location, rather than te longitude and latitude (as this is a bit cumbersome or users). 
+- Mobile design.
+- Map feature visual design improved on. 
 - We would have expanded the seed database to include more spots around the world. 
 
 
