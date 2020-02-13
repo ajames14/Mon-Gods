@@ -138,8 +138,6 @@ Another component displayed is our weather forecast chart which also takes in a 
 
 This page also included the comments section were registered users can post comments and delete their own previous comments. A user also rates the spot here, and can see the average user rating displayed by the wave images. 
 
->>> INSERT SCREENSHOTS
-
 **Share A Spot**
 
 Here, registered users are allowed to upload a new surfing spot they might have discovered and not yet on our website. This helps increase the number of destinations on our website and make users feel part of the building process of the website. 
@@ -157,7 +155,8 @@ We also have a profile page were users can upload a photo, see all their favorit
 
 **Bugs**
 
-- .....
+- Mobile compatibility: some feautures to be tweaked to be made mobile friendly.
+- Photo uploads: currenty the front-end registration form requires a user to provide a photo when they sign up. This is not required on the back end and from a UX point of view should not be the case. 
 
 
 ## Challenges
