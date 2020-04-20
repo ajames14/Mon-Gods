@@ -2,7 +2,7 @@
 
 by Charlotte Thomas, Awal Yusuf, Cuong Tran and [Abi James](https://github.com/ajames14)
 
-[Link to final project](https://git.heroku.com/project-3-swell.git)
+[Link to final project](https://swell-project3.herokuapp.com/)
 
 ## Overview
 
